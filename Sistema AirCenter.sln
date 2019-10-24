@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", ".\Presentacion\Presentacion.csproj", "{8BF61CA3-78E5-4C73-9DAB-2B7C3651A32A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", ".\Negocio\Negocio.csproj", "{D6E7DAD9-D3A6-4407-80BC-F10E21DE43D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", ".\Modelo\Modelo.csproj", "{0AC838E2-4F34-40A2-AA6B-EE8D5153AEEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BF61CA3-78E5-4C73-9DAB-2B7C3651A32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BF61CA3-78E5-4C73-9DAB-2B7C3651A32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BF61CA3-78E5-4C73-9DAB-2B7C3651A32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BF61CA3-78E5-4C73-9DAB-2B7C3651A32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E7DAD9-D3A6-4407-80BC-F10E21DE43D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E7DAD9-D3A6-4407-80BC-F10E21DE43D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E7DAD9-D3A6-4407-80BC-F10E21DE43D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E7DAD9-D3A6-4407-80BC-F10E21DE43D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC838E2-4F34-40A2-AA6B-EE8D5153AEEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC838E2-4F34-40A2-AA6B-EE8D5153AEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC838E2-4F34-40A2-AA6B-EE8D5153AEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC838E2-4F34-40A2-AA6B-EE8D5153AEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A28AFE96-35BE-4016-9DC1-CB9780BB5D27}
+	EndGlobalSection
+EndGlobal
