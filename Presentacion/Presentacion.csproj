@@ -53,9 +53,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>Recursos\BUNIFU UI\Bunifu_UI_v1.5.3.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -71,6 +68,7 @@
   <ItemGroup>
     <Folder Include="Clases\" />
     <Folder Include="Controles\" />
+    <Folder Include="Recursos\BUNIFU UI\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Formularios\FrmMenu.resx">
@@ -82,7 +80,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Recursos\BUNIFU UI\Bunifu_UI_v1.5.3.dll" />
     <Content Include="Recursos\ICONOS\Businessman_48px.png" />
     <Content Include="Recursos\ICONOS\Close Window_ 2 48px.png" />
     <Content Include="Recursos\ICONOS\Combo Chart_64px.png" />
