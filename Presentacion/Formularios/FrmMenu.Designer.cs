@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.pnelSuperior = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pbMaxMinTam = new System.Windows.Forms.PictureBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
+            this.pnlContenido = new System.Windows.Forms.Panel();
             this.pnelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaxMinTam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
@@ -54,17 +54,6 @@
             this.pnelSuperior.TabIndex = 0;
             this.pnelSuperior.DoubleClick += new System.EventHandler(this.pnelSuperior_DoubleClick);
             this.pnelSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnelSuperior_MouseMove);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Location = new System.Drawing.Point(10, 70);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(989, 593);
-            this.panel2.TabIndex = 1;
             // 
             // pbMaxMinTam
             // 
@@ -108,20 +97,30 @@
             this.pbMinimizar.MouseEnter += new System.EventHandler(this.pbMinimizar_MouseEnter);
             this.pbMinimizar.MouseLeave += new System.EventHandler(this.pbMinimizar_MouseLeave);
             // 
+            // pnlContenido
+            // 
+            this.pnlContenido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlContenido.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlContenido.Location = new System.Drawing.Point(10, 70);
+            this.pnlContenido.Name = "pnlContenido";
+            this.pnlContenido.Size = new System.Drawing.Size(989, 593);
+            this.pnlContenido.TabIndex = 1;
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1009, 673);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlContenido);
             this.Controls.Add(this.pnelSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmMenu";
             this.Load += new System.EventHandler(this.FrmMenu_Load);
-            this.ResizeEnd += new System.EventHandler(this.FrmMenu_ResizeEnd);
             this.SizeChanged += new System.EventHandler(this.FrmMenu_SizeChanged);
             this.pnelSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMaxMinTam)).EndInit();
@@ -134,7 +133,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnelSuperior;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlContenido;
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.PictureBox pbMaxMinTam;

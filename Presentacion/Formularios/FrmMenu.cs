@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,20 +15,42 @@ namespace Presentacion.Formularios
     public partial class FrmMenu : Form
     {
 
+        #region Constantes y variables    
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
+        #endregion
 
-
+        #region Constructores
         public FrmMenu()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region Métodos    
+      
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void CargarFormulario(Form formulario)
+        {
+            formulario.TopLevel = false;
+            formulario.AutoScroll = true;
+            formulario.Size = this.pnlContenido.Size;
+            formulario.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
+            this.pnlContenido.Controls.Add(formulario);
+            formulario.Show();
+        }
+
+        #endregion
+
+        #region Eventos
+  
         private void pbCerrar_MouseLeave(object sender, EventArgs e)
         {
             pbCerrar.Image = Proyecto.Properties.Resources.cerrar;
@@ -72,14 +95,9 @@ namespace Presentacion.Formularios
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-
-            //this.MaximumSize = new Size(this.Width, this.Height);
-            //this.MinimumSize = new Size(this.Width, this.Height);
-        }
-
-        private void FrmMenu_ResizeEnd(object sender, EventArgs e)
-        {
-
+            //Para ahcer pruebas, cargamos el formulario base
+            //TODO: Quitar esta linea y agregae el resto de forms
+            CargarFormulario(new FrmBase());
         }
 
         private void pnelSuperior_DoubleClick(object sender, EventArgs e)
@@ -141,5 +159,8 @@ namespace Presentacion.Formularios
                 pbMaxMinTam.Image = Proyecto.Properties.Resources.minTam;
             }
         }
+
+        #endregion
+
     }
 }
