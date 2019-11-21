@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto.Formularios
+namespace Presentacion.Formularios
 {
-    public partial class FrmDiseñoBase : Form
+    public partial class FrmBaseSinBordes : Form
     {
-        public FrmDiseñoBase()
+
+        public Contexto Contexto { get; set; }
+
+        public FrmBaseSinBordes()
         {
             InitializeComponent();
         }

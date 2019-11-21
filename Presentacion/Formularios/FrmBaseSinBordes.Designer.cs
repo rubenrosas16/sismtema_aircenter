@@ -1,6 +1,6 @@
-﻿namespace Proyecto.Formularios
+﻿namespace Presentacion.Formularios
 {
-    partial class FrmDiseñoBase
+    partial class FrmBaseSinBordes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmBaseSinBordes
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmDiseñoBase";
+            this.ClientSize = new System.Drawing.Size(364, 271);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmBaseSinBordes";
+            this.Text = "InicioSesion";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

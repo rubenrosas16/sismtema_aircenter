@@ -1,4 +1,4 @@
-﻿using Proyecto.Formularios;
+﻿using Presentacion.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controlador;
 
 namespace Presentacion.Formularios
 {
@@ -17,8 +18,11 @@ namespace Presentacion.Formularios
 
         #region Constantes y variables    
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
+        private Controlador.Configuracion Configuracion { get; set; }
+        private Contexto Contexto { get; set; }
 
         #endregion
 
@@ -26,12 +30,36 @@ namespace Presentacion.Formularios
         public FrmMenu()
         {
             InitializeComponent();
+            Configuracion = new Controlador.Configuracion();
+            Contexto = new Contexto(Configuracion.Local.Conexion);
+
+            FrmConBordes login = new FrmConBordes(new FrmLogin(), Contexto);
+            login.ShowDialog();
+
+            if (((FrmLogin)login.Form).User == null)
+            {
+                Environment.Exit(0);
+            }
+
+            SetUser(((FrmLogin)login.Form).User);
+
+
+
+            //User usuario = new User(Contexto);
+            //var usuarios = usuario.GetUsers();
+
         }
 
         #endregion
 
-        #region Métodos    
+        #region Métodos
       
+        private void SetUser(User user)
+        {
+            Configuracion.User = user;
+            lblusuario.Text = user.name;
+        }
+
         [DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
@@ -39,9 +67,20 @@ namespace Presentacion.Formularios
 
         private void CargarFormulario(Form formulario)
         {
+            //Vaciamos el panel
+            foreach (Control obj in this.pnlContenido.Controls)
+            {
+                if (obj.Name != tsInfo.Name)
+                {
+                    if (obj.GetType().IsSubclassOf(typeof(FrmBaseSinBordes)))
+                        ((Form)obj).Close();
+                    obj.Dispose();
+                }
+            }
+            //Llenamos el panel
             formulario.TopLevel = false;
             formulario.AutoScroll = true;
-            formulario.Size = this.pnlContenido.Size;
+            formulario.Size = new Size(this.pnlContenido.Size.Width, this.pnlContenido.Size.Height - tsInfo.Size.Height);
             formulario.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
             this.pnlContenido.Controls.Add(formulario);
             formulario.Show();
@@ -50,26 +89,41 @@ namespace Presentacion.Formularios
         #endregion
 
         #region Eventos
-  
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            if (this.Configuracion.User.TienePermiso(User.Permiso.Roles))
+                CargarFormulario(new FrmRoles(this.Contexto, this.Configuracion));
+            else
+                MessageBox.Show("No tiene permiso para accesar a esta función.", "Permisos", MessageBox.Botones.Aceptar);
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            if (this.Configuracion.User.TienePermiso(User.Permiso.Usuarios))
+                CargarFormulario(new FrmUsuarios(this.Contexto, this.Configuracion));
+            else
+                MessageBox.Show("No tiene permiso para accesar a esta función.","Permisos", MessageBox.Botones.Aceptar);
+        }
+
         private void pbCerrar_MouseLeave(object sender, EventArgs e)
         {
-            pbCerrar.Image = Proyecto.Properties.Resources.cerrar;
+            pbCerrar.Image = Presentacion.Properties.Resources.cerrar;
         }
 
         private void pbCerrar_MouseEnter(object sender, EventArgs e)
         {
-            pbCerrar.Image = Proyecto.Properties.Resources.cerrar2;
-
+            pbCerrar.Image = Presentacion.Properties.Resources.cerrar2;
         }
 
         private void pbMinimizar_MouseEnter(object sender, EventArgs e)
         {
-            pbMinimizar.Image = Proyecto.Properties.Resources.minimizar2 ;
+            pbMinimizar.Image = Presentacion.Properties.Resources.minimizar2 ;
         }
 
         private void pbMinimizar_MouseLeave(object sender, EventArgs e)
         {
-            pbMinimizar.Image = Proyecto.Properties.Resources.minimizar;
+            pbMinimizar.Image = Presentacion.Properties.Resources.minimizar;
 
         }
 
@@ -97,7 +151,7 @@ namespace Presentacion.Formularios
             this.WindowState = FormWindowState.Maximized;
             //Para ahcer pruebas, cargamos el formulario base
             //TODO: Quitar esta linea y agregae el resto de forms
-            CargarFormulario(new FrmBase());
+            CargarFormulario(new FrmBaseSinBordes());
         }
 
         private void pnelSuperior_DoubleClick(object sender, EventArgs e)
@@ -128,11 +182,11 @@ namespace Presentacion.Formularios
         {
             if (this.WindowState == FormWindowState.Normal)
             {
-                pbMaxMinTam.Image = Proyecto.Properties.Resources.maximizar2;
+                pbMaxMinTam.Image = Presentacion.Properties.Resources.maximizar2;
             }
             else if (this.WindowState == FormWindowState.Maximized)
             {
-                pbMaxMinTam.Image = Proyecto.Properties.Resources.minTam2;
+                pbMaxMinTam.Image = Presentacion.Properties.Resources.minTam2;
             }
         }
 
@@ -140,11 +194,11 @@ namespace Presentacion.Formularios
         {
             if (this.WindowState == FormWindowState.Normal)
             {
-                pbMaxMinTam.Image = Proyecto.Properties.Resources.maximizar;
+                pbMaxMinTam.Image = Presentacion.Properties.Resources.maximizar;
             }
             else if (this.WindowState == FormWindowState.Maximized)
             {
-                pbMaxMinTam.Image = Proyecto.Properties.Resources.minTam;
+                pbMaxMinTam.Image = Presentacion.Properties.Resources.minTam;
             }
         }
 
@@ -152,11 +206,11 @@ namespace Presentacion.Formularios
         {
             if (this.WindowState == FormWindowState.Normal)
             {
-                pbMaxMinTam.Image = Proyecto.Properties.Resources.maximizar;
+                pbMaxMinTam.Image = Presentacion.Properties.Resources.maximizar;
             }
             else if (this.WindowState == FormWindowState.Maximized)
             {
-                pbMaxMinTam.Image = Proyecto.Properties.Resources.minTam;
+                pbMaxMinTam.Image = Presentacion.Properties.Resources.minTam;
             }
         }
 

@@ -1,17 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8BF61CA3-78E5-4C73-9DAB-2B7C3651A32A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Proyecto</RootNamespace>
-    <AssemblyName>Proyecto</AssemblyName>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Proyecto.Programa</StartupObject>
+    <StartupObject>Presentacion.Programa</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>copo-de-nieve.ico</ApplicationIcon>
@@ -42,11 +45,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\FrmDiseñoBase.cs">
+    <Compile Include="Clases\MessageBox.cs" />
+    <Compile Include="Controles\BotonImagen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\BotonImagen.Designer.cs">
+      <DependentUpon>BotonImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmConBordes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmDiseñoBase.Designer.cs">
-      <DependentUpon>FrmDiseñoBase.cs</DependentUpon>
+    <Compile Include="Formularios\FrmConBordes.Designer.cs">
+      <DependentUpon>FrmConBordes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmMenu.cs">
       <SubType>Form</SubType>
@@ -54,17 +70,29 @@
     <Compile Include="Formularios\FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmBase.cs">
+    <Compile Include="Formularios\FrmBaseSinBordes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmBase.Designer.cs">
-      <DependentUpon>FrmBase.cs</DependentUpon>
+    <Compile Include="Formularios\FrmBaseSinBordes.Designer.cs">
+      <DependentUpon>FrmBaseSinBordes.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmMessageBox.Designer.cs">
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRoles.Designer.cs">
+      <DependentUpon>FrmRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Programa.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -74,28 +102,45 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{d6e7dad9-d3a6-4407-80bc-f10e21de43d3}</Project>
-      <Name>Negocio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clases\" />
-    <Folder Include="Controles\" />
-  </ItemGroup>
-  <ItemGroup>
+    <EmbeddedResource Include="Controles\BotonImagen.resx">
+      <DependentUpon>BotonImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmConBordes.resx">
+      <DependentUpon>FrmConBordes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmBase.resx">
-      <DependentUpon>FrmBase.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmBaseSinBordes.resx">
+      <DependentUpon>FrmBaseSinBordes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMessageBox.resx">
+      <DependentUpon>FrmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRoles.resx">
+      <DependentUpon>FrmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,7 +149,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="copo-de-nieve.ico" />
+    <None Include="Recursos\ICONOS\005-login.png" />
+    <None Include="Recursos\ICONOS\016-enter.png" />
+    <None Include="Recursos\ICONOS\006-lock-2.png" />
+    <None Include="Recursos\ICONOS\002-unlock.png" />
+    <None Include="Recursos\ICONOS\010-checkCirculo.png" />
+    <None Include="Recursos\ICONOS\010-check.png" />
+    <None Include="Recursos\ICONOS\076-remove.png" />
+    <None Include="Recursos\ICONOS\affiliate.png" />
+    <None Include="Recursos\ICONOS\affiliate2.png" />
+    <None Include="Recursos\ICONOS\036-floppy disk.png" />
+    <None Include="Recursos\ICONOS\036-floppy disk2.png" />
     <Content Include="Recursos\ICONOS\Businessman_48px.png" />
+    <None Include="packages.config" />
     <None Include="Recursos\ICONOS\cerrar.png" />
     <None Include="Recursos\ICONOS\cerrar2.png" />
     <Content Include="Recursos\ICONOS\Close Window_ 2 48px.png" />
@@ -123,7 +180,23 @@
     <Content Include="Recursos\ICONOS\Producto_48px.png" />
     <Content Include="Recursos\ICONOS\Restore Window 2_48px.png" />
     <Content Include="Recursos\ICONOS\User Groups_48px.png" />
+    <None Include="Recursos\ICONOS\user.png" />
+    <None Include="Recursos\ICONOS\user2.png" />
     <Content Include="Recursos\ICONOS\Ventas_48px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Controlador.csproj">
+      <Project>{d6e7dad9-d3a6-4407-80bc-f10e21de43d3}</Project>
+      <Name>Controlador</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
 </Project>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RolesDS" targetNamespace="http://tempuri.org/RolesDS.xsd" xmlns:mstns="http://tempuri.org/RolesDS.xsd" xmlns="http://tempuri.org/RolesDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RolesDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RolesDS" msprop:Generator_UserDSName="RolesDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PermiosRolDT" msprop:Generator_TableClassName="PermiosRolDTDataTable" msprop:Generator_TableVarName="tablePermiosRolDT" msprop:Generator_TablePropName="PermiosRolDT" msprop:Generator_RowDeletingName="PermiosRolDTRowDeleting" msprop:Generator_RowChangingName="PermiosRolDTRowChanging" msprop:Generator_RowEvHandlerName="PermiosRolDTRowChangeEventHandler" msprop:Generator_RowDeletedName="PermiosRolDTRowDeleted" msprop:Generator_UserTableName="PermiosRolDT" msprop:Generator_RowChangedName="PermiosRolDTRowChanged" msprop:Generator_RowEvArgName="PermiosRolDTRowChangeEvent" msprop:Generator_RowClassName="PermiosRolDTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idPermiso" msprop:Generator_ColumnVarNameInTable="columnidPermiso" msprop:Generator_ColumnPropNameInRow="idPermiso" msprop:Generator_ColumnPropNameInTable="idPermisoColumn" msprop:Generator_UserColumnName="idPermiso" type="xs:short" />
+              <xs:element name="idRol" msprop:Generator_ColumnVarNameInTable="columnidRol" msprop:Generator_ColumnPropNameInRow="idRol" msprop:Generator_ColumnPropNameInTable="idRolColumn" msprop:Generator_UserColumnName="idRol" type="xs:short" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="permitir" msprop:Generator_ColumnVarNameInTable="columnpermitir" msprop:Generator_ColumnPropNameInRow="permitir" msprop:Generator_ColumnPropNameInTable="permitirColumn" msprop:Generator_UserColumnName="permitir" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PermiosRolDT" />
+      <xs:field xpath="mstns:idRol" />
+      <xs:field xpath="mstns:idPermiso" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

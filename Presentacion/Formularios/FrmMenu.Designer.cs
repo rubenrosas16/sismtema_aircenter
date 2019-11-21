@@ -30,11 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.pnelSuperior = new System.Windows.Forms.Panel();
+            this.pnlContenido = new System.Windows.Forms.Panel();
+            this.tsInfo = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.lblusuario = new System.Windows.Forms.ToolStripLabel();
+            this.btnRoles = new Presentacion.Controles.BotonImagen();
+            this.btnUsuarios = new Presentacion.Controles.BotonImagen();
             this.pbMaxMinTam = new System.Windows.Forms.PictureBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
-            this.pnlContenido = new System.Windows.Forms.Panel();
             this.pnelSuperior.SuspendLayout();
+            this.pnlContenido.SuspendLayout();
+            this.tsInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaxMinTam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -45,6 +52,8 @@
             this.pnelSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnelSuperior.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnelSuperior.Controls.Add(this.btnRoles);
+            this.pnelSuperior.Controls.Add(this.btnUsuarios);
             this.pnelSuperior.Controls.Add(this.pbMaxMinTam);
             this.pnelSuperior.Controls.Add(this.pbCerrar);
             this.pnelSuperior.Controls.Add(this.pbMinimizar);
@@ -55,10 +64,68 @@
             this.pnelSuperior.DoubleClick += new System.EventHandler(this.pnelSuperior_DoubleClick);
             this.pnelSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnelSuperior_MouseMove);
             // 
+            // pnlContenido
+            // 
+            this.pnlContenido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlContenido.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlContenido.Controls.Add(this.tsInfo);
+            this.pnlContenido.Location = new System.Drawing.Point(10, 70);
+            this.pnlContenido.Name = "pnlContenido";
+            this.pnlContenido.Size = new System.Drawing.Size(989, 593);
+            this.pnlContenido.TabIndex = 1;
+            // 
+            // tsInfo
+            // 
+            this.tsInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tsInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.lblusuario});
+            this.tsInfo.Location = new System.Drawing.Point(0, 568);
+            this.tsInfo.Name = "tsInfo";
+            this.tsInfo.Size = new System.Drawing.Size(989, 25);
+            this.tsInfo.TabIndex = 0;
+            this.tsInfo.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(50, 22);
+            this.toolStripLabel1.Text = "Usuario:";
+            // 
+            // lblusuario
+            // 
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(47, 22);
+            this.lblusuario.Text = "Usuario";
+            // 
+            // btnRoles
+            // 
+            this.btnRoles.ImagenHover = global::Presentacion.Properties.Resources.affiliate2;
+            this.btnRoles.ImagenNormal = global::Presentacion.Properties.Resources.affiliate;
+            this.btnRoles.Location = new System.Drawing.Point(70, 12);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Size = new System.Drawing.Size(54, 52);
+            this.btnRoles.TabIndex = 4;
+            this.btnRoles.ToolTip = "Roles";
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.ImagenHover = global::Presentacion.Properties.Resources.user2;
+            this.btnUsuarios.ImagenNormal = global::Presentacion.Properties.Resources.user;
+            this.btnUsuarios.Location = new System.Drawing.Point(10, 12);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(54, 52);
+            this.btnUsuarios.TabIndex = 3;
+            this.btnUsuarios.ToolTip = "Usuarios";
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
             // pbMaxMinTam
             // 
             this.pbMaxMinTam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbMaxMinTam.Image = global::Proyecto.Properties.Resources.maximizar;
+            this.pbMaxMinTam.Image = global::Presentacion.Properties.Resources.maximizar;
             this.pbMaxMinTam.Location = new System.Drawing.Point(911, 12);
             this.pbMaxMinTam.Name = "pbMaxMinTam";
             this.pbMaxMinTam.Size = new System.Drawing.Size(42, 36);
@@ -86,7 +153,7 @@
             // pbMinimizar
             // 
             this.pbMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbMinimizar.Image = global::Proyecto.Properties.Resources.minimizar;
+            this.pbMinimizar.Image = global::Presentacion.Properties.Resources.minimizar;
             this.pbMinimizar.Location = new System.Drawing.Point(863, 12);
             this.pbMinimizar.Name = "pbMinimizar";
             this.pbMinimizar.Size = new System.Drawing.Size(42, 36);
@@ -96,17 +163,6 @@
             this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
             this.pbMinimizar.MouseEnter += new System.EventHandler(this.pbMinimizar_MouseEnter);
             this.pbMinimizar.MouseLeave += new System.EventHandler(this.pbMinimizar_MouseLeave);
-            // 
-            // pnlContenido
-            // 
-            this.pnlContenido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlContenido.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlContenido.Location = new System.Drawing.Point(10, 70);
-            this.pnlContenido.Name = "pnlContenido";
-            this.pnlContenido.Size = new System.Drawing.Size(989, 593);
-            this.pnlContenido.TabIndex = 1;
             // 
             // FrmMenu
             // 
@@ -123,6 +179,10 @@
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.SizeChanged += new System.EventHandler(this.FrmMenu_SizeChanged);
             this.pnelSuperior.ResumeLayout(false);
+            this.pnlContenido.ResumeLayout(false);
+            this.pnlContenido.PerformLayout();
+            this.tsInfo.ResumeLayout(false);
+            this.tsInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaxMinTam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
@@ -137,5 +197,10 @@
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.PictureBox pbMaxMinTam;
+        private Controles.BotonImagen btnUsuarios;
+        private System.Windows.Forms.ToolStrip tsInfo;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel lblusuario;
+        private Controles.BotonImagen btnRoles;
     }
 }
