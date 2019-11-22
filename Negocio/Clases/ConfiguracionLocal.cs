@@ -10,6 +10,7 @@ namespace Controlador
     public class ConfiguracionLocal
     {
         public string Conexion { get; set; }
+        public string UrlInicio { get; set; }
 
     }
 }

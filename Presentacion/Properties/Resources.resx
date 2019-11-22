@@ -136,6 +136,9 @@
   <data name="036-floppy disk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\036-floppy disk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="068-plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\068-plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="006-lock-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\006-lock-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,6 +166,9 @@
   <data name="cerrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\cerrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="066-plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\066-plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\user2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,8 +178,8 @@
   <data name="minimizar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\minimizar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="076-remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\ICONOS\076-remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="036-floppy disk2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\036-floppy disk2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cerrar21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\cerrar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,7 +187,13 @@
   <data name="002-unlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\002-unlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="036-floppy disk2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\ICONOS\036-floppy disk2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="076-remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\076-remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="046-home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\046-home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="048-home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\048-home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

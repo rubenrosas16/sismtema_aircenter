@@ -51,6 +51,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(50, 50);
             this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.ToolTip = "";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
@@ -62,6 +63,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(50, 50);
             this.btnAceptar.TabIndex = 1;
+            this.btnAceptar.ToolTip = "";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // FrmMessageBox
@@ -74,6 +76,7 @@
             this.Controls.Add(this.lblTexto);
             this.Name = "FrmMessageBox";
             this.Text = "FrmMessageBox";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMessageBox_KeyDown);
             this.ResumeLayout(false);
 
         }

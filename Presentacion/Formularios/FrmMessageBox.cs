@@ -41,12 +41,6 @@ namespace Presentacion.Formularios
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.No;
-            ((Form)this.Parent.Parent).Close();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
             if (BotonCancelar)
             {
                 this.DialogResult = DialogResult.Yes;
@@ -56,6 +50,33 @@ namespace Presentacion.Formularios
                 this.DialogResult = DialogResult.OK;
             }
             ((Form)this.Parent.Parent).Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
+            ((Form)this.Parent.Parent).Close();
+        }
+
+        private void FrmMessageBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (BotonCancelar)
+                {
+                    this.DialogResult = DialogResult.Yes;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                ((Form)this.Parent.Parent).Close();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.DialogResult = DialogResult.No;
+                ((Form)this.Parent.Parent).Close();
+            }
         }
     }
 }

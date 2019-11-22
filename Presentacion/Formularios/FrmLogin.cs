@@ -80,7 +80,7 @@ namespace Presentacion.Formularios
             }
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
+        private void FrmLogin_Shown(object sender, EventArgs e)
         {
             txtUser.Focus();
         }

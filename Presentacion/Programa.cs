@@ -10,6 +10,7 @@ namespace Presentacion
 {
     class Programa
     {
+        [STAThread]
         public static void Main()
         {
             Application.EnableVisualStyles();

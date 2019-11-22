@@ -69,6 +69,8 @@ namespace Presentacion.Formularios
         private void FrmConBordes_Shown(object sender, EventArgs e)
         {
             this.Form.Show();
+            this.pnlContenido.Focus();
+            this.Form.Focus();
         }
 
         private void FrmConBordes_FormClosed(object sender, FormClosedEventArgs e)

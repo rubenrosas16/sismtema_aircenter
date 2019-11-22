@@ -389,7 +389,7 @@ namespace Controlador.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PermiosRolDTRow AddPermiosRolDTRow(short idPermiso, short idRol, string nombre, bool permitir) {
+            public PermiosRolDTRow AddPermiosRolDTRow(int idPermiso, int idRol, string nombre, bool permitir) {
                 PermiosRolDTRow rowPermiosRolDTRow = ((PermiosRolDTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idPermiso,
@@ -403,7 +403,7 @@ namespace Controlador.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PermiosRolDTRow FindByidRolidPermiso(short idRol, short idPermiso) {
+            public PermiosRolDTRow FindByidRolidPermiso(int idRol, int idPermiso) {
                 return ((PermiosRolDTRow)(this.Rows.Find(new object[] {
                             idRol,
                             idPermiso})));
@@ -435,9 +435,9 @@ namespace Controlador.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnidPermiso = new global::System.Data.DataColumn("idPermiso", typeof(short), null, global::System.Data.MappingType.Element);
+                this.columnidPermiso = new global::System.Data.DataColumn("idPermiso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidPermiso);
-                this.columnidRol = new global::System.Data.DataColumn("idRol", typeof(short), null, global::System.Data.MappingType.Element);
+                this.columnidRol = new global::System.Data.DataColumn("idRol", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidRol);
                 this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre);
@@ -590,9 +590,9 @@ namespace Controlador.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short idPermiso {
+            public int idPermiso {
                 get {
-                    return ((short)(this[this.tablePermiosRolDT.idPermisoColumn]));
+                    return ((int)(this[this.tablePermiosRolDT.idPermisoColumn]));
                 }
                 set {
                     this[this.tablePermiosRolDT.idPermisoColumn] = value;
@@ -601,9 +601,9 @@ namespace Controlador.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short idRol {
+            public int idRol {
                 get {
-                    return ((short)(this[this.tablePermiosRolDT.idRolColumn]));
+                    return ((int)(this[this.tablePermiosRolDT.idRolColumn]));
                 }
                 set {
                     this[this.tablePermiosRolDT.idRolColumn] = value;

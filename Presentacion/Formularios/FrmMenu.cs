@@ -52,8 +52,8 @@ namespace Presentacion.Formularios
 
         #endregion
 
-        #region Métodos
-      
+        #region Métodos    
+
         private void SetUser(User user)
         {
             Configuracion.User = user;
@@ -148,10 +148,11 @@ namespace Presentacion.Formularios
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
+            lblFechaHora.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
             this.WindowState = FormWindowState.Maximized;
             //Para ahcer pruebas, cargamos el formulario base
             //TODO: Quitar esta linea y agregae el resto de forms
-            CargarFormulario(new FrmBaseSinBordes());
+            btnInicio.HacerClick();
         }
 
         private void pnelSuperior_DoubleClick(object sender, EventArgs e)
@@ -214,7 +215,16 @@ namespace Presentacion.Formularios
             }
         }
 
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            CargarFormulario(new FrmInicio(this.Configuracion));
+        }
+
         #endregion
 
+        private void tmFechaHora_Tick(object sender, EventArgs e)
+        {        
+            lblFechaHora.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
+        }
     }
 }

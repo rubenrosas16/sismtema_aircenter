@@ -111,7 +111,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmLogin";
             this.Text = "Entrar al Sistema AirCenter";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.Shown += new System.EventHandler(this.FrmLogin_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

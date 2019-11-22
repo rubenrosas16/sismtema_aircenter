@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\MessageBox.cs" />
+    <Compile Include="Clases\Utilerias.cs" />
     <Compile Include="Controles\BotonImagen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -57,6 +58,12 @@
     </Compile>
     <Compile Include="Formularios\FrmConBordes.Designer.cs">
       <DependentUpon>FrmConBordes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -124,6 +131,9 @@
     <EmbeddedResource Include="Formularios\FrmConBordes.resx">
       <DependentUpon>FrmConBordes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +154,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
@@ -160,6 +171,10 @@
     <None Include="Recursos\ICONOS\affiliate2.png" />
     <None Include="Recursos\ICONOS\036-floppy disk.png" />
     <None Include="Recursos\ICONOS\036-floppy disk2.png" />
+    <None Include="Recursos\ICONOS\066-plus.png" />
+    <None Include="Recursos\ICONOS\068-plus.png" />
+    <None Include="Recursos\ICONOS\046-home.png" />
+    <None Include="Recursos\ICONOS\048-home.png" />
     <Content Include="Recursos\ICONOS\Businessman_48px.png" />
     <None Include="packages.config" />
     <None Include="Recursos\ICONOS\cerrar.png" />
