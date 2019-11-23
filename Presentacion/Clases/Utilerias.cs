@@ -21,7 +21,7 @@ namespace Presentacion
 
         public static void SoloEnteros(System.Windows.Forms.TextBox textBox)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, "[^0-9]"))
+            if (textBox.Focused && System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, "[^0-9]"))
             {
                 textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
             }

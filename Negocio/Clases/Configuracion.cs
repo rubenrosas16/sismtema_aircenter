@@ -13,6 +13,8 @@ namespace Controlador
     public class Configuracion
     {
 
+        private static Configuracion Instancia = null;
+
         private static string nombreXML = "Configuracion.xml";
         private string rutaXML;
         public ConfiguracionLocal Local { get; set; }
@@ -23,6 +25,15 @@ namespace Controlador
             rutaXML = GetExecutingDirectory() + @"\" + nombreXML;
 
             CargarConfiguracionLocal();
+        }
+
+        public static Configuracion GetConfiguracion()
+        {
+            if (Instancia == null)
+            {
+                Instancia = new Configuracion();
+            }
+            return Instancia;
         }
 
         public static string GetExecutingDirectory()

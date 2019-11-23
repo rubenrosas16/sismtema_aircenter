@@ -59,6 +59,18 @@
     <Compile Include="Formularios\FrmConBordes.Designer.cs">
       <DependentUpon>FrmConBordes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmConsultaRapida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmConsultaRapida.Designer.cs">
+      <DependentUpon>FrmConsultaRapida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCuenta.Designer.cs">
+      <DependentUpon>FrmCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,9 @@
     <EmbeddedResource Include="Formularios\FrmConBordes.resx">
       <DependentUpon>FrmConBordes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCuenta.resx">
+      <DependentUpon>FrmCuenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +190,7 @@
     <None Include="Recursos\ICONOS\068-plus.png" />
     <None Include="Recursos\ICONOS\046-home.png" />
     <None Include="Recursos\ICONOS\048-home.png" />
+    <None Include="Recursos\ICONOS\004-login-1.png" />
     <Content Include="Recursos\ICONOS\Businessman_48px.png" />
     <None Include="packages.config" />
     <None Include="Recursos\ICONOS\cerrar.png" />
@@ -194,6 +210,8 @@
     <None Include="Recursos\ICONOS\minTam2.png" />
     <Content Include="Recursos\ICONOS\Producto_48px.png" />
     <Content Include="Recursos\ICONOS\Restore Window 2_48px.png" />
+    <None Include="Recursos\ICONOS\telemarketer.png" />
+    <None Include="Recursos\ICONOS\telemarketer2.png" />
     <Content Include="Recursos\ICONOS\User Groups_48px.png" />
     <None Include="Recursos\ICONOS\user.png" />
     <None Include="Recursos\ICONOS\user2.png" />

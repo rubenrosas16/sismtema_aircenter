@@ -9,6 +9,8 @@ namespace Controlador
     public partial class User : Entidad
     {
 
+        public Role Rol { get; set; }
+
         public enum Permiso
         {
             Usuarios = 1,
@@ -20,12 +22,64 @@ namespace Controlador
 
         }
 
+        public bool CrearUsuario(User user)
+        {
+            if ((from u in Contexto.Users where u.user1.Trim().ToUpper() == user.user1.Trim().ToUpper() select u).Any())           
+                return false; //Ya existe el usuario
+
+
+            Role rol = (from r in Contexto.Roles where r.idRole == user.Rol.idRole select r).FirstOrDefault();
+
+            user.Roles.Add(rol);
+            this.Contexto.Users.Add(user);
+            this.Contexto.SaveChanges();
+            return true;
+        }
+
+        public void GuardarUsuario(User userActualizado)
+        {
+            User userActual = (from u in this.Contexto.Users
+                           where u.idUser == userActualizado.idUser
+                           select u).FirstOrDefault();
+
+            userActual.name = userActualizado.name;
+            userActual.password = userActualizado.password;
+            userActual.status = userActualizado.status;
+            userActual.user1 = userActualizado.user1;
+
+            if (userActualizado.Rol != null)
+            {
+                //Si tiene rol, lo actualizamos
+                Role rolNuevo = (from r in this.Contexto.Roles
+                                 where r.idRole == userActualizado.Rol.idRole
+                                 select r).FirstOrDefault();
+
+                Role rolActual = userActual.Roles.FirstOrDefault();
+                userActual.Roles.Remove(rolActual);
+                userActual.Roles.Add(rolNuevo);
+            }
+
+            this.Contexto.SaveChanges();
+        }
+
         public User GetUser(string user, string password)
         {
             ReiniciarConexto();
-            User retorno = this.Contexto.Users.Where(x => x.user1 == user && x.password == password && x.status == true).Select(x => x).FirstOrDefault();
+            User retorno = this.Contexto.Users.Where(x => x.user1.Trim().ToUpper() == user.Trim().ToUpper() && x.password == password && x.status == true).Select(x => x).FirstOrDefault();
             if (retorno != null)
                 retorno.Contexto = this.Contexto;
+            return retorno;
+        }
+
+        public User GetUser(int idUser)
+        {
+            ReiniciarConexto();
+            User retorno = this.Contexto.Users.Where(x => x.idUser == idUser).Select(x => x).FirstOrDefault();
+            if (retorno != null)
+            {
+                retorno.Contexto = this.Contexto;
+                retorno.Rol = retorno.Roles.FirstOrDefault();
+            }
             return retorno;
         }
 

@@ -31,24 +31,25 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.pnelSuperior = new System.Windows.Forms.Panel();
-            this.pbMaxMinTam = new System.Windows.Forms.PictureBox();
-            this.pbCerrar = new System.Windows.Forms.PictureBox();
-            this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlContenido = new System.Windows.Forms.Panel();
             this.tsInfo = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.lblusuario = new System.Windows.Forms.ToolStripLabel();
             this.lblFechaHora = new System.Windows.Forms.ToolStripLabel();
             this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.btnCuenta = new Presentacion.Controles.BotonImagen();
             this.btnInicio = new Presentacion.Controles.BotonImagen();
             this.btnRoles = new Presentacion.Controles.BotonImagen();
             this.btnUsuarios = new Presentacion.Controles.BotonImagen();
+            this.pbMaxMinTam = new System.Windows.Forms.PictureBox();
+            this.pbCerrar = new System.Windows.Forms.PictureBox();
+            this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pnelSuperior.SuspendLayout();
+            this.pnlContenido.SuspendLayout();
+            this.tsInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaxMinTam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
-            this.pnlContenido.SuspendLayout();
-            this.tsInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnelSuperior
@@ -56,6 +57,7 @@
             this.pnelSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnelSuperior.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnelSuperior.Controls.Add(this.btnCuenta);
             this.pnelSuperior.Controls.Add(this.btnInicio);
             this.pnelSuperior.Controls.Add(this.btnRoles);
             this.pnelSuperior.Controls.Add(this.btnUsuarios);
@@ -68,48 +70,6 @@
             this.pnelSuperior.TabIndex = 0;
             this.pnelSuperior.DoubleClick += new System.EventHandler(this.pnelSuperior_DoubleClick);
             this.pnelSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnelSuperior_MouseMove);
-            // 
-            // pbMaxMinTam
-            // 
-            this.pbMaxMinTam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbMaxMinTam.Image = global::Presentacion.Properties.Resources.maximizar;
-            this.pbMaxMinTam.Location = new System.Drawing.Point(911, 12);
-            this.pbMaxMinTam.Name = "pbMaxMinTam";
-            this.pbMaxMinTam.Size = new System.Drawing.Size(42, 36);
-            this.pbMaxMinTam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMaxMinTam.TabIndex = 2;
-            this.pbMaxMinTam.TabStop = false;
-            this.pbMaxMinTam.Click += new System.EventHandler(this.pbMaxMinTam_Click);
-            this.pbMaxMinTam.MouseEnter += new System.EventHandler(this.pbMaxMinTam_MouseEnter);
-            this.pbMaxMinTam.MouseLeave += new System.EventHandler(this.pbMaxMinTam_MouseLeave);
-            // 
-            // pbCerrar
-            // 
-            this.pbCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pbCerrar.Image")));
-            this.pbCerrar.Location = new System.Drawing.Point(959, 12);
-            this.pbCerrar.Name = "pbCerrar";
-            this.pbCerrar.Size = new System.Drawing.Size(42, 36);
-            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCerrar.TabIndex = 1;
-            this.pbCerrar.TabStop = false;
-            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
-            this.pbCerrar.MouseEnter += new System.EventHandler(this.pbCerrar_MouseEnter);
-            this.pbCerrar.MouseLeave += new System.EventHandler(this.pbCerrar_MouseLeave);
-            // 
-            // pbMinimizar
-            // 
-            this.pbMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbMinimizar.Image = global::Presentacion.Properties.Resources.minimizar;
-            this.pbMinimizar.Location = new System.Drawing.Point(863, 12);
-            this.pbMinimizar.Name = "pbMinimizar";
-            this.pbMinimizar.Size = new System.Drawing.Size(42, 36);
-            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMinimizar.TabIndex = 0;
-            this.pbMinimizar.TabStop = false;
-            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
-            this.pbMinimizar.MouseEnter += new System.EventHandler(this.pbMinimizar_MouseEnter);
-            this.pbMinimizar.MouseLeave += new System.EventHandler(this.pbMinimizar_MouseLeave);
             // 
             // pnlContenido
             // 
@@ -162,6 +122,17 @@
             this.tmFechaHora.Interval = 30000;
             this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
             // 
+            // btnCuenta
+            // 
+            this.btnCuenta.ImagenHover = global::Presentacion.Properties.Resources._004_login_1;
+            this.btnCuenta.ImagenNormal = global::Presentacion.Properties.Resources._005_login;
+            this.btnCuenta.Location = new System.Drawing.Point(72, 12);
+            this.btnCuenta.Name = "btnCuenta";
+            this.btnCuenta.Size = new System.Drawing.Size(54, 52);
+            this.btnCuenta.TabIndex = 6;
+            this.btnCuenta.ToolTip = "Mi cuenta";
+            this.btnCuenta.Click += new System.EventHandler(this.btnCuenta_Click);
+            // 
             // btnInicio
             // 
             this.btnInicio.ImagenHover = global::Presentacion.Properties.Resources._048_home;
@@ -175,9 +146,9 @@
             // 
             // btnRoles
             // 
-            this.btnRoles.ImagenHover = global::Presentacion.Properties.Resources.affiliate2;
-            this.btnRoles.ImagenNormal = global::Presentacion.Properties.Resources.affiliate;
-            this.btnRoles.Location = new System.Drawing.Point(132, 12);
+            this.btnRoles.ImagenHover = global::Presentacion.Properties.Resources.telemarketer2;
+            this.btnRoles.ImagenNormal = global::Presentacion.Properties.Resources.telemarketer;
+            this.btnRoles.Location = new System.Drawing.Point(192, 12);
             this.btnRoles.Name = "btnRoles";
             this.btnRoles.Size = new System.Drawing.Size(54, 52);
             this.btnRoles.TabIndex = 4;
@@ -186,14 +157,56 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.ImagenHover = global::Presentacion.Properties.Resources.user2;
-            this.btnUsuarios.ImagenNormal = global::Presentacion.Properties.Resources.user;
-            this.btnUsuarios.Location = new System.Drawing.Point(72, 12);
+            this.btnUsuarios.ImagenHover = global::Presentacion.Properties.Resources.affiliate2;
+            this.btnUsuarios.ImagenNormal = global::Presentacion.Properties.Resources.affiliate;
+            this.btnUsuarios.Location = new System.Drawing.Point(132, 12);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(54, 52);
             this.btnUsuarios.TabIndex = 3;
             this.btnUsuarios.ToolTip = "Usuarios";
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // pbMaxMinTam
+            // 
+            this.pbMaxMinTam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbMaxMinTam.Image = global::Presentacion.Properties.Resources.maximizar;
+            this.pbMaxMinTam.Location = new System.Drawing.Point(911, 12);
+            this.pbMaxMinTam.Name = "pbMaxMinTam";
+            this.pbMaxMinTam.Size = new System.Drawing.Size(42, 36);
+            this.pbMaxMinTam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMaxMinTam.TabIndex = 2;
+            this.pbMaxMinTam.TabStop = false;
+            this.pbMaxMinTam.Click += new System.EventHandler(this.pbMaxMinTam_Click);
+            this.pbMaxMinTam.MouseEnter += new System.EventHandler(this.pbMaxMinTam_MouseEnter);
+            this.pbMaxMinTam.MouseLeave += new System.EventHandler(this.pbMaxMinTam_MouseLeave);
+            // 
+            // pbCerrar
+            // 
+            this.pbCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pbCerrar.Image")));
+            this.pbCerrar.Location = new System.Drawing.Point(959, 12);
+            this.pbCerrar.Name = "pbCerrar";
+            this.pbCerrar.Size = new System.Drawing.Size(42, 36);
+            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCerrar.TabIndex = 1;
+            this.pbCerrar.TabStop = false;
+            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
+            this.pbCerrar.MouseEnter += new System.EventHandler(this.pbCerrar_MouseEnter);
+            this.pbCerrar.MouseLeave += new System.EventHandler(this.pbCerrar_MouseLeave);
+            // 
+            // pbMinimizar
+            // 
+            this.pbMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbMinimizar.Image = global::Presentacion.Properties.Resources.minimizar;
+            this.pbMinimizar.Location = new System.Drawing.Point(863, 12);
+            this.pbMinimizar.Name = "pbMinimizar";
+            this.pbMinimizar.Size = new System.Drawing.Size(42, 36);
+            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMinimizar.TabIndex = 0;
+            this.pbMinimizar.TabStop = false;
+            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
+            this.pbMinimizar.MouseEnter += new System.EventHandler(this.pbMinimizar_MouseEnter);
+            this.pbMinimizar.MouseLeave += new System.EventHandler(this.pbMinimizar_MouseLeave);
             // 
             // FrmMenu
             // 
@@ -210,13 +223,13 @@
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.SizeChanged += new System.EventHandler(this.FrmMenu_SizeChanged);
             this.pnelSuperior.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMaxMinTam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             this.pnlContenido.ResumeLayout(false);
             this.pnlContenido.PerformLayout();
             this.tsInfo.ResumeLayout(false);
             this.tsInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMaxMinTam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,5 +249,6 @@
         private Controles.BotonImagen btnInicio;
         private System.Windows.Forms.ToolStripLabel lblFechaHora;
         private System.Windows.Forms.Timer tmFechaHora;
+        private Controles.BotonImagen btnCuenta;
     }
 }

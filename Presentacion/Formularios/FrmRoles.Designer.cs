@@ -65,7 +65,7 @@
             this.txtIDRol.TabIndex = 2;
             this.txtIDRol.TextChanged += new System.EventHandler(this.txtIDRol_TextChanged);
             this.txtIDRol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDRol_KeyDown);
-            this.txtIDRol.Validating += new System.ComponentModel.CancelEventHandler(this.txtIDRol_Validating);
+            this.txtIDRol.Validated += new System.EventHandler(this.txtIDRol_Validated);
             // 
             // txtNombreRol
             // 

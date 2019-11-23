@@ -30,7 +30,7 @@ namespace Presentacion.Formularios
         public FrmMenu()
         {
             InitializeComponent();
-            Configuracion = new Controlador.Configuracion();
+            Configuracion = Configuracion.GetConfiguracion();
             Contexto = new Contexto(Configuracion.Local.Conexion);
 
             FrmConBordes login = new FrmConBordes(new FrmLogin(), Contexto);
@@ -90,6 +90,15 @@ namespace Presentacion.Formularios
 
         #region Eventos
 
+        private void tmFechaHora_Tick(object sender, EventArgs e)
+        {
+            lblFechaHora.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
+        }
+
+        private void btnCuenta_Click(object sender, EventArgs e)
+        {
+            CargarFormulario(new FrmCuenta(this.Contexto));
+        }
         private void btnRoles_Click(object sender, EventArgs e)
         {
             if (this.Configuracion.User.TienePermiso(User.Permiso.Roles))
@@ -222,9 +231,5 @@ namespace Presentacion.Formularios
 
         #endregion
 
-        private void tmFechaHora_Tick(object sender, EventArgs e)
-        {        
-            lblFechaHora.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
-        }
     }
 }

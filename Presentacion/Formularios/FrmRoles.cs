@@ -95,7 +95,7 @@ namespace Presentacion.Formularios
             Limpiar();
         }
 
-        private void txtIDRol_Validating(object sender, CancelEventArgs e)
+        private void txtIDRol_Validated(object sender, EventArgs e)
         {
             if (txtIDRol.Text.Trim() == "" || txtIDRol.Text == "Nuevo")
             {
@@ -132,5 +132,6 @@ namespace Presentacion.Formularios
                 txtIDRol.Text = txtIDRol.Text.Remove(txtIDRol.Text.Length - 1);
             }
         }
+
     }
 }

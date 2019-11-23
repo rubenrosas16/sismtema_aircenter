@@ -39,7 +39,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnNuevo = new Presentacion.Controles.BotonImagen();
             this.btnGuardar = new Presentacion.Controles.BotonImagen();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtID
@@ -52,7 +52,7 @@
             this.txtID.TabIndex = 0;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
-            this.txtID.Validating += new System.ComponentModel.CancelEventHandler(this.txtID_Validating);
+            this.txtID.Validated += new System.EventHandler(this.txtID_Validated);
             // 
             // label1
             // 
@@ -165,23 +165,23 @@
             this.btnGuardar.ToolTip = "Guardar Rol";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // checkBox1
+            // chkActivo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.checkBox1.Location = new System.Drawing.Point(542, 26);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(70, 20);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "Activo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkActivo.AutoSize = true;
+            this.chkActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chkActivo.Location = new System.Drawing.Point(542, 26);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(70, 20);
+            this.chkActivo.TabIndex = 11;
+            this.chkActivo.Text = "Activo";
+            this.chkActivo.UseVisualStyleBackColor = true;
             // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 546);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label4);
@@ -216,6 +216,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private Controles.BotonImagen btnNuevo;
         private Controles.BotonImagen btnGuardar;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkActivo;
     }
 }

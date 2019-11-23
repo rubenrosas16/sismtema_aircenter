@@ -1,6 +1,8 @@
 ﻿using Controlador;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Presentacion.Formularios
@@ -10,6 +12,7 @@ namespace Presentacion.Formularios
 
         private Configuracion Configuracion { get; set; }
         private User Users;
+        private User User;
 
         public FrmUsuarios(Contexto contexto, Configuracion configuracion)
         {
@@ -27,22 +30,54 @@ namespace Presentacion.Formularios
             txtNombre.Text = "";
             txtUsuario.Text = "";
             txtPassword.Text = "";
+            User = null;
+            chkActivo.Enabled = true;
+            chkActivo.Checked = true;
+            this.txtUsuario.Enabled = true;
+            txtID.Focus();
         }
 
         #endregion
 
         #region Eventos
 
-        private void txtID_Validating(object sender, CancelEventArgs e)
+        private void txtID_Validated(object sender, EventArgs e)
         {
-            if (txtID.Text.Trim() == "" || txtID.Text == "Nuevo")
+            if (this.txtID.Text.Trim() == "" || this.txtID.Text == "Nuevo")
             {
-                txtID.Text = "Nuevo";
-                txtID.Text = "";
+                this.txtNombre.Text = "";
+                this.txtUsuario.Text = "";
+                this.txtPassword.Text = "";
+                this.cboRol.SelectedIndex = 0;
+                this.txtID.Text = "Nuevo";
+                this.User = null;
+                chkActivo.Enabled = true;
+                txtUsuario.Enabled = true;
             }
             else
             {
-                
+                int id = 0;
+                if(!int.TryParse(this.txtID.Text.Trim(), out id))
+                {
+                    MessageBox.Show("El id no es un valor entero.", "Usuarios", MessageBox.Botones.Aceptar);
+                    Limpiar();
+                    return;
+                }
+                this.User = this.Users.GetUser(id);
+                if (this.User == null)
+                {
+                    MessageBox.Show("El Usuario no existe", "Usuarios", MessageBox.Botones.Aceptar);
+                    Limpiar();
+                    return;
+                }
+                this.txtNombre.Text = User.name;
+                this.txtUsuario.Text = User.user1;
+                this.txtUsuario.Enabled = false;
+                this.txtPassword.Text = User.password;
+                this.chkActivo.Checked = User.status;
+                this.cboRol.SelectedItem  = (from Role r in ((List<Role>)cboRol.DataSource) where r.idRole == this.User.Rol.idRole select r).FirstOrDefault();
+                if (this.User.idUser == this.Configuracion.User.idUser)
+                    chkActivo.Enabled = false;
             }
         }
 
@@ -50,30 +85,50 @@ namespace Presentacion.Formularios
         {
             if(txtNombre.Text.Trim() == "")
             {
-
+                MessageBox.Show("Escriba el Nombre.", "Verifique", MessageBox.Botones.Aceptar);
+                return;
             }
             else if (txtUsuario.Text.Trim() == "")
             {
-
+                MessageBox.Show("Escriba el Usuario.", "Verifique", MessageBox.Botones.Aceptar);
+                return;
             }
             else if (txtPassword.Text.Trim() == "")
             {
-
+                MessageBox.Show("Escriba la Contraseña.", "Verifique", MessageBox.Botones.Aceptar);
+                return;
             }
 
-            if (txtID.Text.Trim() == "" || txtID.Text == "Nuevo")
+            if ((txtID.Text.Trim() == "" || txtID.Text == "Nuevo") && User == null)
             {
-                
-                MessageBox.Show("Usuario creado correctamente.", "Usuario", MessageBox.Botones.Aceptar);
+                User = new User()
+                {
+                    name = this.txtNombre.Text.Trim(),
+                    user1 = this.txtUsuario.Text.Trim(),
+                    password = this.txtPassword.Text,
+                    status = chkActivo.Checked
+                };
+                User.Rol = (Role)cboRol.SelectedItem;
+                if (!Users.CrearUsuario(User))
+                {
+                    MessageBox.Show("El usuario ya existe, capture otro.", "Usuario", MessageBox.Botones.Aceptar);
+                    return;
+                }
+                MessageBox.Show("Usuario Creado correctamente.", "Usuario", MessageBox.Botones.Aceptar);
                 Limpiar();
             }
             else
             {
                 int id = 0;
-                if (int.TryParse(txtID.Text.Trim(), out id) && id != 0)
+                if (int.TryParse(txtID.Text.Trim(), out id) && id != 0 && User != null)
                 {
-                    
-                    MessageBox.Show("Usuario actualizado correctamente.", "Usuario", MessageBox.Botones.Aceptar);
+                    this.User.name = this.txtNombre.Text.Trim();
+                    this.User.user1 = this.txtUsuario.Text.Trim();
+                    this.User.password = this.txtPassword.Text;
+                    this.User.status = chkActivo.Checked;
+                    User.Rol = (Role)cboRol.SelectedItem;
+                    Users.GuardarUsuario(User);
+                        MessageBox.Show("Usuario Actualizado correctamente.", "Usuario", MessageBox.Botones.Aceptar);
                     Limpiar();
                 }
             }
@@ -111,7 +166,8 @@ namespace Presentacion.Formularios
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
-            cboRol.DataSource = Users.GetRoles();
+            List<Role> Roles = this.Users.GetRoles();
+            cboRol.DataSource = Roles;
             cboRol.DisplayMember = "name";
 
             txtID.Focus();
