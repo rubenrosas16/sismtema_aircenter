@@ -14,7 +14,8 @@ namespace Controlador
         public enum Permiso
         {
             Usuarios = 1,
-            Roles = 2
+            Roles = 2,
+            Productos = 3
         }
 
         public User(Contexto contexto) : base(contexto)
@@ -229,16 +230,52 @@ namespace Controlador
             }
             return false;
         }
-        public List<User> GetUsers()
+        public List<User> GetUsers(bool soloActivos = false)
         {
             ReiniciarConexto();
-            return this.Contexto.Users.Select( x => x).ToList();
+            return this.Contexto.Users.Where(x => soloActivos == true ? x.status == true : true).Select( x => x).ToList();
         }
 
         public List<Role> GetRoles()
         {
             ReiniciarConexto();
             return this.Contexto.Roles.Where(x => x.status).Select(x => x).ToList();
+        }
+
+        public DataSets.ConsultaRapida.TresCamposDTDataTable ConsultaRapida(bool soloActivos = false)
+        {
+            ReiniciarConexto();
+            DataSets.ConsultaRapida.TresCamposDTDataTable dt = new DataSets.ConsultaRapida.TresCamposDTDataTable();
+            var consulta = this.Contexto.Users.
+                Where(x => soloActivos == true ? x.status == true : true).
+                Select(x => x).ToArray();
+            foreach (User fila in consulta)
+            {
+                dt.AddTresCamposDTRow(
+                    fila.idUser,
+                    fila.name,
+                    fila.status
+                );
+            }
+            return dt;
+        }
+
+        public DataSets.ConsultaRapida.TresCamposDTDataTable ConsultaRapidaRoles(bool soloActivos = false)
+        {
+            ReiniciarConexto();
+            DataSets.ConsultaRapida.TresCamposDTDataTable dt = new DataSets.ConsultaRapida.TresCamposDTDataTable();
+            var consulta = this.Contexto.Roles.
+                Where(x => soloActivos == true ? x.status == true : true).
+                Select(x => x).ToArray();
+            foreach (Role fila in consulta)
+            {
+                dt.AddTresCamposDTRow(
+                    fila.idRole,
+                    fila.name,
+                    fila.status
+                );
+            }
+            return dt;
         }
 
     }

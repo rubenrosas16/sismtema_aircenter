@@ -45,6 +45,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ConsultaRapida.cs" />
     <Compile Include="Clases\MessageBox.cs" />
     <Compile Include="Clases\Utilerias.cs" />
     <Compile Include="Controles\BotonImagen.cs">
@@ -101,6 +102,12 @@
     <Compile Include="Formularios\FrmMessageBox.Designer.cs">
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmProductos.Designer.cs">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +150,9 @@
     <EmbeddedResource Include="Formularios\FrmConBordes.resx">
       <DependentUpon>FrmConBordes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmConsultaRapida.resx">
+      <DependentUpon>FrmConsultaRapida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCuenta.resx">
       <DependentUpon>FrmCuenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="copo-de-nieve.ico" />
+    <None Include="Properties\DataSources\Controlador.DataSets.ConsultaRapidaDS+TresCamposDTDataTable.datasource" />
     <None Include="Recursos\ICONOS\005-login.png" />
     <None Include="Recursos\ICONOS\016-enter.png" />
     <None Include="Recursos\ICONOS\006-lock-2.png" />
@@ -191,6 +202,8 @@
     <None Include="Recursos\ICONOS\046-home.png" />
     <None Include="Recursos\ICONOS\048-home.png" />
     <None Include="Recursos\ICONOS\004-login-1.png" />
+    <None Include="Recursos\ICONOS\air-conditioner1.png" />
+    <None Include="Recursos\ICONOS\air-conditioner2.png" />
     <Content Include="Recursos\ICONOS\Businessman_48px.png" />
     <None Include="packages.config" />
     <None Include="Recursos\ICONOS\cerrar.png" />
@@ -201,6 +214,8 @@
     <Content Include="Recursos\ICONOS\Ganancias_48px.png" />
     <None Include="Recursos\ICONOS\maximizar.png" />
     <None Include="Recursos\ICONOS\maximizar2.png" />
+    <None Include="Recursos\ICONOS\loupe.png" />
+    <None Include="Recursos\ICONOS\loupe2.png" />
     <Content Include="Recursos\ICONOS\Maximize Window_2 48px.png" />
     <Content Include="Recursos\ICONOS\Menu_48px.png" />
     <None Include="Recursos\ICONOS\minimizar.png" />

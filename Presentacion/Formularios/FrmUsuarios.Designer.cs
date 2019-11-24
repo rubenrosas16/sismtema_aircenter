@@ -37,9 +37,10 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
+            this.btnBuscar = new Presentacion.Controles.BotonImagen();
             this.btnNuevo = new Presentacion.Controles.BotonImagen();
             this.btnGuardar = new Presentacion.Controles.BotonImagen();
-            this.chkActivo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtID
@@ -139,6 +140,30 @@
             this.txtPassword.TabIndex = 7;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
+            // chkActivo
+            // 
+            this.chkActivo.AutoSize = true;
+            this.chkActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chkActivo.Location = new System.Drawing.Point(542, 26);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(70, 20);
+            this.chkActivo.TabIndex = 11;
+            this.chkActivo.Text = "Activo";
+            this.chkActivo.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBuscar.ImagenHover = global::Presentacion.Properties.Resources.loupe2;
+            this.btnBuscar.ImagenNormal = global::Presentacion.Properties.Resources.loupe;
+            this.btnBuscar.Location = new System.Drawing.Point(141, 483);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(50, 50);
+            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.ToolTip = "";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -165,22 +190,12 @@
             this.btnGuardar.ToolTip = "Guardar Rol";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // chkActivo
-            // 
-            this.chkActivo.AutoSize = true;
-            this.chkActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.chkActivo.Location = new System.Drawing.Point(542, 26);
-            this.chkActivo.Name = "chkActivo";
-            this.chkActivo.Size = new System.Drawing.Size(70, 20);
-            this.chkActivo.TabIndex = 11;
-            this.chkActivo.Text = "Activo";
-            this.chkActivo.UseVisualStyleBackColor = true;
-            // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 546);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGuardar);
@@ -217,5 +232,6 @@
         private Controles.BotonImagen btnNuevo;
         private Controles.BotonImagen btnGuardar;
         private System.Windows.Forms.CheckBox chkActivo;
+        private Controles.BotonImagen btnBuscar;
     }
 }

@@ -176,5 +176,17 @@ namespace Presentacion.Formularios
 
         #endregion
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ConsultaRapida consulta = new ConsultaRapida(this.Contexto);
+            txtID.Focus();
+            int id = consulta.Consultar(ConsultaRapida.TipoConsulta.Users);
+            if (id > 0)
+            {
+                txtID.Text = id.ToString();
+                txtNombre.Focus();
+            }
+            
+        }
     }
 }

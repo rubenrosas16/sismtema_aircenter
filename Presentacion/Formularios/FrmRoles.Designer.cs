@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIDRol = new System.Windows.Forms.TextBox();
             this.txtNombreRol = new System.Windows.Forms.TextBox();
@@ -40,6 +41,7 @@
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.btnNuevo = new Presentacion.Controles.BotonImagen();
             this.btnGuardar = new Presentacion.Controles.BotonImagen();
+            this.btnBuscar = new Presentacion.Controles.BotonImagen();
             ((System.ComponentModel.ISupportInitialize)(this.grdPermisos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RolesDS)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +83,14 @@
             this.grdPermisos.AllowUserToAddRows = false;
             this.grdPermisos.AllowUserToDeleteRows = false;
             this.grdPermisos.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdPermisos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdPermisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPermisoDataGridViewTextBoxColumn,
@@ -91,7 +101,7 @@
             this.grdPermisos.DataSource = this.RolesDS;
             this.grdPermisos.Location = new System.Drawing.Point(44, 83);
             this.grdPermisos.Name = "grdPermisos";
-            this.grdPermisos.Size = new System.Drawing.Size(459, 203);
+            this.grdPermisos.Size = new System.Drawing.Size(474, 203);
             this.grdPermisos.TabIndex = 0;
             // 
             // idPermisoDataGridViewTextBoxColumn
@@ -125,7 +135,7 @@
             this.permitirDataGridViewCheckBoxColumn.DataPropertyName = "permitir";
             this.permitirDataGridViewCheckBoxColumn.HeaderText = "Permitir";
             this.permitirDataGridViewCheckBoxColumn.Name = "permitirDataGridViewCheckBoxColumn";
-            this.permitirDataGridViewCheckBoxColumn.Width = 50;
+            this.permitirDataGridViewCheckBoxColumn.Width = 65;
             // 
             // RolesDS
             // 
@@ -166,11 +176,25 @@
             this.btnGuardar.ToolTip = "Guardar Rol";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBuscar.ImagenHover = global::Presentacion.Properties.Resources.loupe2;
+            this.btnBuscar.ImagenNormal = global::Presentacion.Properties.Resources.loupe;
+            this.btnBuscar.Location = new System.Drawing.Point(137, 335);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(50, 50);
+            this.btnBuscar.TabIndex = 13;
+            this.btnBuscar.ToolTip = "";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // FrmRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 388);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtNombreRol);
@@ -196,11 +220,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIDRol;
         private System.Windows.Forms.TextBox txtNombreRol;
+        private Controles.BotonImagen btnNuevo;
+        private System.Windows.Forms.CheckBox chkActivo;
+        private Controles.BotonImagen btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPermisoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRolDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn permitirDataGridViewCheckBoxColumn;
-        private Controles.BotonImagen btnNuevo;
-        private System.Windows.Forms.CheckBox chkActivo;
     }
 }

@@ -142,6 +142,9 @@
   <data name="002-unlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\002-unlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="004-login-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\004-login-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="telemarketer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\telemarketer2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,6 +190,9 @@
   <data name="076-remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\076-remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loupe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\loupe2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="036-floppy disk2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\036-floppy disk2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,13 +202,19 @@
   <data name="066-plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\066-plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loupe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\loupe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minTam" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\minTam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minTam2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ICONOS\minTam2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="004-login-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\ICONOS\004-login-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="air-conditioner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\air-conditioner1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="air-conditioner2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ICONOS\air-conditioner2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

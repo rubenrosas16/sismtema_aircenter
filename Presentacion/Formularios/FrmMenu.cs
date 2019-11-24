@@ -229,7 +229,16 @@ namespace Presentacion.Formularios
             CargarFormulario(new FrmInicio(this.Configuracion));
         }
 
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            if (this.Configuracion.User.TienePermiso(User.Permiso.Productos))
+                CargarFormulario(new FrmProductos(this.Contexto, this.Configuracion));
+            else
+                MessageBox.Show("No tiene permiso para accesar a esta función.", "Permisos", MessageBox.Botones.Aceptar);
+        }
+
         #endregion
+
 
     }
 }

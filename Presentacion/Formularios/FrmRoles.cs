@@ -133,5 +133,16 @@ namespace Presentacion.Formularios
             }
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ConsultaRapida consulta = new ConsultaRapida(this.Contexto);
+            txtIDRol.Focus();
+            int id = consulta.Consultar(ConsultaRapida.TipoConsulta.Roles);
+            if (id > 0)
+            {
+                txtIDRol.Text = id.ToString();
+                txtNombreRol.Focus();
+            }
+        }
     }
 }

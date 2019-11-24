@@ -55,6 +55,11 @@
     <Compile Include="Clases\Contexto.cs" />
     <Compile Include="Clases\Entidad.cs" />
     <Compile Include="Clases\User.cs" />
+    <Compile Include="DataSets\ConsultaRapidaDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsultaRapidaDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\RolesDS.Designer.cs">
       <DependentUpon>RolesDS.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -97,6 +102,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="DataSets\ConsultaRapidaDS.xsc">
+      <DependentUpon>ConsultaRapidaDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ConsultaRapidaDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConsultaRapidaDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ConsultaRapidaDS.xss">
+      <DependentUpon>ConsultaRapidaDS.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\RolesDS.xsc">
       <DependentUpon>RolesDS.xsd</DependentUpon>
     </None>
