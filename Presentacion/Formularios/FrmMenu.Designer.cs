@@ -37,14 +37,17 @@
             this.lblusuario = new System.Windows.Forms.ToolStripLabel();
             this.lblFechaHora = new System.Windows.Forms.ToolStripLabel();
             this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.pbMaxMinTam = new System.Windows.Forms.PictureBox();
+            this.pbCerrar = new System.Windows.Forms.PictureBox();
+            this.pbMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnClientes = new Presentacion.Controles.BotonImagen();
+            this.btnCotizacion = new Presentacion.Controles.BotonImagen();
+            this.btnDocumentos = new Presentacion.Controles.BotonImagen();
             this.btnProductos = new Presentacion.Controles.BotonImagen();
             this.btnCuenta = new Presentacion.Controles.BotonImagen();
             this.btnInicio = new Presentacion.Controles.BotonImagen();
             this.btnRoles = new Presentacion.Controles.BotonImagen();
             this.btnUsuarios = new Presentacion.Controles.BotonImagen();
-            this.pbMaxMinTam = new System.Windows.Forms.PictureBox();
-            this.pbCerrar = new System.Windows.Forms.PictureBox();
-            this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pnelSuperior.SuspendLayout();
             this.pnlContenido.SuspendLayout();
             this.tsInfo.SuspendLayout();
@@ -58,6 +61,9 @@
             this.pnelSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnelSuperior.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnelSuperior.Controls.Add(this.btnClientes);
+            this.pnelSuperior.Controls.Add(this.btnCotizacion);
+            this.pnelSuperior.Controls.Add(this.btnDocumentos);
             this.pnelSuperior.Controls.Add(this.btnProductos);
             this.pnelSuperior.Controls.Add(this.btnCuenta);
             this.pnelSuperior.Controls.Add(this.btnInicio);
@@ -124,61 +130,6 @@
             this.tmFechaHora.Interval = 30000;
             this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
             // 
-            // btnProductos
-            // 
-            this.btnProductos.ImagenHover = global::Presentacion.Properties.Resources.air_conditioner2;
-            this.btnProductos.ImagenNormal = global::Presentacion.Properties.Resources.air_conditioner1;
-            this.btnProductos.Location = new System.Drawing.Point(66, 12);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(54, 52);
-            this.btnProductos.TabIndex = 7;
-            this.btnProductos.ToolTip = "Productos";
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
-            // 
-            // btnCuenta
-            // 
-            this.btnCuenta.ImagenHover = global::Presentacion.Properties.Resources._004_login_1;
-            this.btnCuenta.ImagenNormal = global::Presentacion.Properties.Resources._005_login;
-            this.btnCuenta.Location = new System.Drawing.Point(246, 12);
-            this.btnCuenta.Name = "btnCuenta";
-            this.btnCuenta.Size = new System.Drawing.Size(54, 52);
-            this.btnCuenta.TabIndex = 6;
-            this.btnCuenta.ToolTip = "Mi cuenta";
-            this.btnCuenta.Click += new System.EventHandler(this.btnCuenta_Click);
-            // 
-            // btnInicio
-            // 
-            this.btnInicio.ImagenHover = global::Presentacion.Properties.Resources._048_home;
-            this.btnInicio.ImagenNormal = global::Presentacion.Properties.Resources._046_home;
-            this.btnInicio.Location = new System.Drawing.Point(12, 12);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(48, 52);
-            this.btnInicio.TabIndex = 5;
-            this.btnInicio.ToolTip = "Inicio";
-            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
-            // 
-            // btnRoles
-            // 
-            this.btnRoles.ImagenHover = global::Presentacion.Properties.Resources.telemarketer2;
-            this.btnRoles.ImagenNormal = global::Presentacion.Properties.Resources.telemarketer;
-            this.btnRoles.Location = new System.Drawing.Point(186, 12);
-            this.btnRoles.Name = "btnRoles";
-            this.btnRoles.Size = new System.Drawing.Size(54, 52);
-            this.btnRoles.TabIndex = 4;
-            this.btnRoles.ToolTip = "Roles";
-            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.ImagenHover = global::Presentacion.Properties.Resources.affiliate2;
-            this.btnUsuarios.ImagenNormal = global::Presentacion.Properties.Resources.affiliate;
-            this.btnUsuarios.Location = new System.Drawing.Point(126, 12);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(54, 52);
-            this.btnUsuarios.TabIndex = 3;
-            this.btnUsuarios.ToolTip = "Usuarios";
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
             // pbMaxMinTam
             // 
             this.pbMaxMinTam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -220,6 +171,94 @@
             this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
             this.pbMinimizar.MouseEnter += new System.EventHandler(this.pbMinimizar_MouseEnter);
             this.pbMinimizar.MouseLeave += new System.EventHandler(this.pbMinimizar_MouseLeave);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.ImagenHover = global::Presentacion.Properties.Resources.customer2;
+            this.btnClientes.ImagenNormal = global::Presentacion.Properties.Resources.customer;
+            this.btnClientes.Location = new System.Drawing.Point(115, 12);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(54, 52);
+            this.btnClientes.TabIndex = 10;
+            this.btnClientes.ToolTip = "Clientes";
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnCotizacion
+            // 
+            this.btnCotizacion.ImagenHover = global::Presentacion.Properties.Resources.calculator2;
+            this.btnCotizacion.ImagenNormal = global::Presentacion.Properties.Resources.calculator;
+            this.btnCotizacion.Location = new System.Drawing.Point(175, 12);
+            this.btnCotizacion.Name = "btnCotizacion";
+            this.btnCotizacion.Size = new System.Drawing.Size(54, 52);
+            this.btnCotizacion.TabIndex = 9;
+            this.btnCotizacion.ToolTip = "Cotizaciones";
+            this.btnCotizacion.Click += new System.EventHandler(this.btnCotizacion_Click);
+            // 
+            // btnDocumentos
+            // 
+            this.btnDocumentos.ImagenHover = global::Presentacion.Properties.Resources.file2;
+            this.btnDocumentos.ImagenNormal = global::Presentacion.Properties.Resources.file;
+            this.btnDocumentos.Location = new System.Drawing.Point(235, 12);
+            this.btnDocumentos.Name = "btnDocumentos";
+            this.btnDocumentos.Size = new System.Drawing.Size(54, 52);
+            this.btnDocumentos.TabIndex = 8;
+            this.btnDocumentos.ToolTip = "Documentos";
+            this.btnDocumentos.Click += new System.EventHandler(this.btnDocumentos_Click);
+            // 
+            // btnProductos
+            // 
+            this.btnProductos.ImagenHover = global::Presentacion.Properties.Resources.air_conditioner2;
+            this.btnProductos.ImagenNormal = global::Presentacion.Properties.Resources.air_conditioner1;
+            this.btnProductos.Location = new System.Drawing.Point(295, 12);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(54, 52);
+            this.btnProductos.TabIndex = 7;
+            this.btnProductos.ToolTip = "Productos";
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            // 
+            // btnCuenta
+            // 
+            this.btnCuenta.ImagenHover = global::Presentacion.Properties.Resources._004_login_1;
+            this.btnCuenta.ImagenNormal = global::Presentacion.Properties.Resources._005_login;
+            this.btnCuenta.Location = new System.Drawing.Point(475, 12);
+            this.btnCuenta.Name = "btnCuenta";
+            this.btnCuenta.Size = new System.Drawing.Size(54, 52);
+            this.btnCuenta.TabIndex = 6;
+            this.btnCuenta.ToolTip = "Mi cuenta";
+            this.btnCuenta.Click += new System.EventHandler(this.btnCuenta_Click);
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.ImagenHover = global::Presentacion.Properties.Resources._048_home;
+            this.btnInicio.ImagenNormal = global::Presentacion.Properties.Resources._046_home;
+            this.btnInicio.Location = new System.Drawing.Point(12, 12);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(48, 52);
+            this.btnInicio.TabIndex = 5;
+            this.btnInicio.ToolTip = "Inicio";
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
+            // btnRoles
+            // 
+            this.btnRoles.ImagenHover = global::Presentacion.Properties.Resources.telemarketer2;
+            this.btnRoles.ImagenNormal = global::Presentacion.Properties.Resources.telemarketer;
+            this.btnRoles.Location = new System.Drawing.Point(415, 12);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Size = new System.Drawing.Size(54, 52);
+            this.btnRoles.TabIndex = 4;
+            this.btnRoles.ToolTip = "Roles";
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.ImagenHover = global::Presentacion.Properties.Resources.affiliate2;
+            this.btnUsuarios.ImagenNormal = global::Presentacion.Properties.Resources.affiliate;
+            this.btnUsuarios.Location = new System.Drawing.Point(355, 12);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(54, 52);
+            this.btnUsuarios.TabIndex = 3;
+            this.btnUsuarios.ToolTip = "Usuarios";
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // FrmMenu
             // 
@@ -264,5 +303,8 @@
         private System.Windows.Forms.Timer tmFechaHora;
         private Controles.BotonImagen btnCuenta;
         private Controles.BotonImagen btnProductos;
+        private Controles.BotonImagen btnDocumentos;
+        private Controles.BotonImagen btnCotizacion;
+        private Controles.BotonImagen btnClientes;
     }
 }

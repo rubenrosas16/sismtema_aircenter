@@ -54,6 +54,12 @@
     <Compile Include="Controles\BotonImagen.Designer.cs">
       <DependentUpon>BotonImagen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmConBordes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +72,23 @@
     <Compile Include="Formularios\FrmConsultaRapida.Designer.cs">
       <DependentUpon>FrmConsultaRapida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCotizacion.Designer.cs">
+      <DependentUpon>FrmCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmCuenta.Designer.cs">
       <DependentUpon>FrmCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmDocumentos.Designer.cs">
+      <DependentUpon>FrmDocumentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmInicio.cs">
       <SubType>Form</SubType>
@@ -147,6 +165,9 @@
     <EmbeddedResource Include="Controles\BotonImagen.resx">
       <DependentUpon>BotonImagen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmConBordes.resx">
       <DependentUpon>FrmConBordes.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCuenta.resx">
       <DependentUpon>FrmCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmDocumentos.resx">
+      <DependentUpon>FrmDocumentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
@@ -170,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMessageBox.resx">
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmProductos.resx">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmRoles.resx">
       <DependentUpon>FrmRoles.cs</DependentUpon>
@@ -208,9 +235,15 @@
     <None Include="packages.config" />
     <None Include="Recursos\ICONOS\cerrar.png" />
     <None Include="Recursos\ICONOS\cerrar2.png" />
+    <None Include="Recursos\ICONOS\calculator.png" />
+    <None Include="Recursos\ICONOS\calculator2.png" />
     <Content Include="Recursos\ICONOS\Close Window_ 2 48px.png" />
     <Content Include="Recursos\ICONOS\Combo Chart_64px.png" />
     <Content Include="Recursos\ICONOS\compras_48px.png" />
+    <None Include="Recursos\ICONOS\file.png" />
+    <None Include="Recursos\ICONOS\file2.png" />
+    <None Include="Recursos\ICONOS\customer.png" />
+    <None Include="Recursos\ICONOS\customer2.png" />
     <Content Include="Recursos\ICONOS\Ganancias_48px.png" />
     <None Include="Recursos\ICONOS\maximizar.png" />
     <None Include="Recursos\ICONOS\maximizar2.png" />
@@ -223,6 +256,11 @@
     <Content Include="Recursos\ICONOS\Minimize Window_2 48px.png" />
     <None Include="Recursos\ICONOS\minTam.png" />
     <None Include="Recursos\ICONOS\minTam2.png" />
+    <None Include="Recursos\ICONOS\pencil.png" />
+    <None Include="Recursos\ICONOS\pencil2.png" />
+    <None Include="Recursos\ICONOS\picture.png" />
+    <None Include="Recursos\ICONOS\printer.png" />
+    <None Include="Recursos\ICONOS\printer2.png" />
     <Content Include="Recursos\ICONOS\Producto_48px.png" />
     <Content Include="Recursos\ICONOS\Restore Window 2_48px.png" />
     <None Include="Recursos\ICONOS\telemarketer.png" />

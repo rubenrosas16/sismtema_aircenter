@@ -237,6 +237,31 @@ namespace Presentacion.Formularios
                 MessageBox.Show("No tiene permiso para accesar a esta función.", "Permisos", MessageBox.Botones.Aceptar);
         }
 
+        private void btnDocumentos_Click(object sender, EventArgs e)
+        {
+            if (this.Configuracion.User.TienePermiso(User.Permiso.Documentos))
+                CargarFormulario(new FrmDocumentos(this.Contexto, this.Configuracion));
+            else
+                MessageBox.Show("No tiene permiso para accesar a esta función.", "Permisos", MessageBox.Botones.Aceptar);
+        }
+
+        private void btnCotizacion_Click(object sender, EventArgs e)
+        {
+            if (this.Configuracion.User.TienePermiso(User.Permiso.Cotizaciones))
+                CargarFormulario(new FrmCotizacion(this.Contexto, this.Configuracion));
+            else
+                MessageBox.Show("No tiene permiso para accesar a esta función.", "Permisos", MessageBox.Botones.Aceptar);
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            if (this.Configuracion.User.TienePermiso(User.Permiso.Clientes))
+                CargarFormulario(new FrmClientes(this.Contexto, this.Configuracion));
+            else
+                MessageBox.Show("No tiene permiso para accesar a esta función.", "Permisos", MessageBox.Botones.Aceptar);
+        }
+
+
         #endregion
 
 

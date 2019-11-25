@@ -161,7 +161,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(50, 50);
             this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.ToolTip = "";
+            this.btnBuscar.ToolTip = "Buscar Usuario";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNuevo
@@ -174,7 +174,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(56, 47);
             this.btnNuevo.TabIndex = 10;
-            this.btnNuevo.ToolTip = "Nuevo Rol";
+            this.btnNuevo.ToolTip = "Nuevo Usuario";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
@@ -187,7 +187,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(56, 47);
             this.btnGuardar.TabIndex = 9;
-            this.btnGuardar.ToolTip = "Guardar Rol";
+            this.btnGuardar.ToolTip = "Guardar Usuario";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmUsuarios

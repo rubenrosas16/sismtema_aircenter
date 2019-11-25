@@ -15,7 +15,10 @@ namespace Controlador
         {
             Usuarios = 1,
             Roles = 2,
-            Productos = 3
+            Productos = 3,
+            Documentos = 4,
+            Cotizaciones = 5,
+            Clientes = 6
         }
 
         public User(Contexto contexto) : base(contexto)
