@@ -4,12 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a4ca52223b054b01a9f162761c55add2" Name="Diagram1">
-        <EntityTypeShape EntityType="SistemaAirCenterModel.Permission" Width="1.5" PointX="0.75" PointY="1.125" />
-        <EntityTypeShape EntityType="SistemaAirCenterModel.Role" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="SistemaAirCenterModel.User" Width="1.5" PointX="5.25" PointY="0.875" />
-        <AssociationConnector Association="SistemaAirCenterModel.RolesPermissions" />
-        <AssociationConnector Association="SistemaAirCenterModel.UsersRoles" />
+      <Diagram DiagramId="e39311810781438bba5e0021f28391da" Name="Diagram1">
+        <EntityTypeShape EntityType="SistemaAirCenterModel.Client" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaAirCenterModel.Permission" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaAirCenterModel.Role" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaAirCenterModel.User" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="SistemaAirCenterModel.RolesPermissions" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaAirCenterModel.UsersRoles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

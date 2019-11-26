@@ -1,4 +1,5 @@
 ﻿using Controlador;
+using Controlador.DataSets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,8 @@ namespace Presentacion
         public enum TipoConsulta
         {
             Users,
-            Roles
+            Roles,
+            Clients
         }
 
         public ConsultaRapida(Contexto contexto)
@@ -37,12 +39,22 @@ namespace Presentacion
                     dataTable = ConsultarRoles();
                     titulo = "Consulta de Roles";
                     break;
+                case TipoConsulta.Clients:
+                    dataTable = ConsultarClientes();
+                    titulo = "Consulta de Clientes";
+                    break;
                 default:
                     throw new Exception("El tipo de conutla rapida no está definido.");
             }
             Formularios.FrmConBordes form = new Formularios.FrmConBordes(new Formularios.FrmConsultaRapidaTresCampos(titulo, dataTable));
             form.ShowDialog();
             return ((Formularios.FrmConsultaRapidaTresCampos)form.Form).Seleccion;
+        }
+
+        private Controlador.DataSets.ConsultaRapida.TresCamposDTDataTable ConsultarClientes()
+        {
+            Client clients = new Client(this.Contexto);
+            return clients.ConsultaRapida();
         }
 
         private Controlador.DataSets.ConsultaRapida.TresCamposDTDataTable ConsultarUsuarios()

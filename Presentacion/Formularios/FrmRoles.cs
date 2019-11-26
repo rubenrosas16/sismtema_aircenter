@@ -97,6 +97,7 @@ namespace Presentacion.Formularios
 
         private void txtIDRol_Validated(object sender, EventArgs e)
         {
+
             if (txtIDRol.Text.Trim() == "" || txtIDRol.Text == "Nuevo")
             {
                 txtIDRol.Text = "Nuevo";
@@ -127,10 +128,7 @@ namespace Presentacion.Formularios
 
         private void txtIDRol_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtIDRol.Text, "[^0-9]"))
-            {
-                txtIDRol.Text = txtIDRol.Text.Remove(txtIDRol.Text.Length - 1);
-            }
+            Utilerias.SoloEnteros((TextBox)sender);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -144,5 +142,6 @@ namespace Presentacion.Formularios
                 txtNombreRol.Focus();
             }
         }
+
     }
 }

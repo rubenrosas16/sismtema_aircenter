@@ -42,7 +42,7 @@
             // 
             this.chkActivo.AutoSize = true;
             this.chkActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.chkActivo.Location = new System.Drawing.Point(146, 51);
+            this.chkActivo.Location = new System.Drawing.Point(145, 51);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(70, 20);
             this.chkActivo.TabIndex = 15;
@@ -77,6 +77,8 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(90, 24);
             this.txtID.TabIndex = 12;
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
+            this.txtID.Validated += new System.EventHandler(this.txtID_Validated);
             // 
             // btnBuscar
             // 
@@ -88,7 +90,8 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(50, 50);
             this.btnBuscar.TabIndex = 18;
-            this.btnBuscar.ToolTip = "";
+            this.btnBuscar.ToolTip = "Buscar Cliente";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNuevo
             // 
@@ -100,7 +103,8 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(56, 47);
             this.btnNuevo.TabIndex = 17;
-            this.btnNuevo.ToolTip = "Nuevo Rol";
+            this.btnNuevo.ToolTip = "Nuevo Cliente";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -112,7 +116,8 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(56, 47);
             this.btnGuardar.TabIndex = 16;
-            this.btnGuardar.ToolTip = "Guardar Rol";
+            this.btnGuardar.ToolTip = "Guardar Cliente";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label2
             // 

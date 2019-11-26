@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SistemaAirCenterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SistemaAirCenterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="idClient" />
+          </Key>
+          <Property Name="idClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Permissions">
           <Key>
             <PropertyRef Name="idPermission" />
@@ -96,6 +104,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SistemaAirCenterModelStoreContainer">
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Permissions" EntityType="Self.Permissions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RolesPermissions" EntityType="Self.RolesPermissions" Schema="dbo" store:Type="Tables" />
@@ -118,110 +127,129 @@
             <End Role="UsersRoles" EntitySet="UsersRoles" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SistemaAirCenterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="SistemaAirCenterEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Permissions" EntityType="SistemaAirCenterModel.Permission" />
-          <EntitySet Name="Roles" EntityType="SistemaAirCenterModel.Role" />
-          <EntitySet Name="Users" EntityType="SistemaAirCenterModel.User" />
-          <AssociationSet Name="RolesPermissions" Association="SistemaAirCenterModel.RolesPermissions">
-            <End Role="Permission" EntitySet="Permissions" />
-            <End Role="Role" EntitySet="Roles" />
-          </AssociationSet>
-          <AssociationSet Name="UsersRoles" Association="SistemaAirCenterModel.UsersRoles">
-            <End Role="Role" EntitySet="Roles" />
-            <End Role="User" EntitySet="Users" />
-          </AssociationSet>
-        </EntityContainer>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="idClient" />
+          </Key>
+          <Property Name="idClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+        </EntityType>
         <EntityType Name="Permission">
           <Key>
             <PropertyRef Name="idPermission" />
           </Key>
           <Property Name="idPermission" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Roles" Relationship="SistemaAirCenterModel.RolesPermissions" FromRole="Permission" ToRole="Role" />
+          <NavigationProperty Name="Roles" Relationship="Self.RolesPermissions" FromRole="Permissions" ToRole="Roles" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="idRole" />
           </Key>
           <Property Name="idRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Permissions" Relationship="SistemaAirCenterModel.RolesPermissions" FromRole="Role" ToRole="Permission" />
-          <NavigationProperty Name="Users" Relationship="SistemaAirCenterModel.UsersRoles" FromRole="Role" ToRole="User" />
+          <NavigationProperty Name="Permissions" Relationship="Self.RolesPermissions" FromRole="Roles" ToRole="Permissions" />
+          <NavigationProperty Name="Users" Relationship="Self.UsersRoles" FromRole="Roles" ToRole="Users" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="idUser" />
           </Key>
           <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="user1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Roles" Relationship="SistemaAirCenterModel.UsersRoles" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Roles" Relationship="Self.UsersRoles" FromRole="Users" ToRole="Roles" />
         </EntityType>
         <Association Name="RolesPermissions">
-          <End Type="SistemaAirCenterModel.Permission" Role="Permission" Multiplicity="*" />
-          <End Type="SistemaAirCenterModel.Role" Role="Role" Multiplicity="*" />
+          <End Role="Permissions" Type="Self.Permission" Multiplicity="*" />
+          <End Role="Roles" Type="Self.Role" Multiplicity="*" />
         </Association>
         <Association Name="UsersRoles">
-          <End Type="SistemaAirCenterModel.Role" Role="Role" Multiplicity="*" />
-          <End Type="SistemaAirCenterModel.User" Role="User" Multiplicity="*" />
+          <End Role="Roles" Type="Self.Role" Multiplicity="*" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
         </Association>
+        <EntityContainer Name="SistemaAirCenterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="Permissions" EntityType="Self.Permission" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="RolesPermissions" Association="Self.RolesPermissions">
+            <End Role="Permissions" EntitySet="Permissions" />
+            <End Role="Roles" EntitySet="Roles" />
+          </AssociationSet>
+          <AssociationSet Name="UsersRoles" Association="Self.UsersRoles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SistemaAirCenterModelStoreContainer" CdmEntityContainer="SistemaAirCenterEntities">
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="SistemaAirCenterModel.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Permissions">
             <EntityTypeMapping TypeName="SistemaAirCenterModel.Permission">
               <MappingFragment StoreEntitySet="Permissions">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="idPermission" ColumnName="idPermission" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="SistemaAirCenterModel.Role">
               <MappingFragment StoreEntitySet="Roles">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="idRole" ColumnName="idRole" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="SistemaAirCenterModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="user1" ColumnName="user" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="user1" ColumnName="user" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <AssociationSetMapping Name="RolesPermissions" TypeName="SistemaAirCenterModel.RolesPermissions" StoreEntitySet="RolesPermissions">
-            <EndProperty Name="Role">
-              <ScalarProperty Name="idRole" ColumnName="idRole" />
-            </EndProperty>
-            <EndProperty Name="Permission">
+            <EndProperty Name="Permissions">
               <ScalarProperty Name="idPermission" ColumnName="idPermission" />
+            </EndProperty>
+            <EndProperty Name="Roles">
+              <ScalarProperty Name="idRole" ColumnName="idRole" />
             </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="UsersRoles" TypeName="SistemaAirCenterModel.UsersRoles" StoreEntitySet="UsersRoles">
-            <EndProperty Name="User">
-              <ScalarProperty Name="idUser" ColumnName="idUser" />
-            </EndProperty>
-            <EndProperty Name="Role">
+            <EndProperty Name="Roles">
               <ScalarProperty Name="idRole" ColumnName="idRole" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="idUser" ColumnName="idUser" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>
