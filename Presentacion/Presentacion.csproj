@@ -161,7 +161,12 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Controlador\Controlador.csproj">
+      <Project>{d6e7dad9-d3a6-4407-80bc-f10e21de43d3}</Project>
+      <Name>Controlador</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controles\BotonImagen.resx">
       <DependentUpon>BotonImagen.cs</DependentUpon>
@@ -270,12 +275,6 @@
     <None Include="Recursos\ICONOS\user.png" />
     <None Include="Recursos\ICONOS\user2.png" />
     <Content Include="Recursos\ICONOS\Ventas_48px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Negocio\Controlador.csproj">
-      <Project>{d6e7dad9-d3a6-4407-80bc-f10e21de43d3}</Project>
-      <Name>Controlador</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

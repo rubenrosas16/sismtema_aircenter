@@ -21,5 +21,15 @@ namespace Presentacion.Formularios
             this.Contexto = contexto;
             this.Configuracion = configuracion;
         }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilerias.EsTeclaNumerica((TextBox) sender, ref e);
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            Utilerias.SoloEnteros((TextBox)sender);
+        }
     }
 }

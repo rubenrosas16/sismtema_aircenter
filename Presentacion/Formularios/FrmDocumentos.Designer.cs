@@ -138,6 +138,7 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnImprimir.ImagenHover = global::Presentacion.Properties.Resources.printer2;
             this.btnImprimir.ImagenNormal = global::Presentacion.Properties.Resources.printer;
             this.btnImprimir.Location = new System.Drawing.Point(199, 390);

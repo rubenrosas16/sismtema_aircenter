@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Presentacion
@@ -41,6 +42,18 @@ namespace Presentacion
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        public static void EsTeclaNumerica(System.Windows.Forms.TextBox textBox, ref System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && (textBox.Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
 
