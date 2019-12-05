@@ -17,7 +17,8 @@ namespace Presentacion
         {
             Users,
             Roles,
-            Clients
+            Clients,
+            Products
         }
 
         public ConsultaRapida(Contexto contexto)
@@ -43,6 +44,10 @@ namespace Presentacion
                     dataTable = ConsultarClientes();
                     titulo = "Consulta de Clientes";
                     break;
+                case TipoConsulta.Products:
+                    dataTable = ConsultarProductos();
+                    titulo = "Consulta de Productos";
+                    break;
                 default:
                     throw new Exception("El tipo de conutla rapida no está definido.");
             }
@@ -67,6 +72,12 @@ namespace Presentacion
         {
             User users = new User(this.Contexto);
             return users.ConsultaRapidaRoles();
+        }
+
+        private Controlador.DataSets.ConsultaRapida.TresCamposDTDataTable ConsultarProductos()
+        {
+            Product products = new Product(this.Contexto);
+            return products.ConsultaRapida();
         }
 
     }

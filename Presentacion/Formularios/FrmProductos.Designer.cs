@@ -58,6 +58,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(378, 24);
             this.txtNombre.TabIndex = 14;
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
             // label1
             // 
@@ -79,6 +80,8 @@
             this.txtID.Size = new System.Drawing.Size(90, 24);
             this.txtID.TabIndex = 12;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
+            this.txtID.Validated += new System.EventHandler(this.txtID_Validated);
             // 
             // label2
             // 
@@ -99,6 +102,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(90, 24);
             this.txtPrecio.TabIndex = 20;
+            this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // btnBuscar
@@ -111,7 +115,8 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(50, 50);
             this.btnBuscar.TabIndex = 18;
-            this.btnBuscar.ToolTip = "";
+            this.btnBuscar.ToolTip = "Buscar Producto";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNuevo
             // 
@@ -123,7 +128,8 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(56, 47);
             this.btnNuevo.TabIndex = 17;
-            this.btnNuevo.ToolTip = "Nuevo Rol";
+            this.btnNuevo.ToolTip = "Nuevo Producto";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -135,7 +141,8 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(56, 47);
             this.btnGuardar.TabIndex = 16;
-            this.btnGuardar.ToolTip = "Guardar Rol";
+            this.btnGuardar.ToolTip = "Guardar Producto";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmProductos
             // 
