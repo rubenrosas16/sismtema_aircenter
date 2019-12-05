@@ -30,5 +30,8 @@ namespace Controlador
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Document> Documents { get; set; }
+        public virtual DbSet<Quotation> Quotations { get; set; }
+        public virtual DbSet<QuotationProduct> QuotationProducts { get; set; }
     }
 }

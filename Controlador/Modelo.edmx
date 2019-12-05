@@ -13,6 +13,16 @@
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="status" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Documents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idClient" Type="int" Nullable="false" />
+          <Property Name="dataFile" Type="varbinary(max)" Nullable="false" />
+          <Property Name="active" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Permissions">
           <Key>
             <PropertyRef Name="idPermission" />
@@ -29,6 +39,34 @@
           <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="price" Type="money" Nullable="false" />
           <Property Name="active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Quotations">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idClient" Type="int" Nullable="false" />
+          <Property Name="total" Type="money" Nullable="false" />
+          <Property Name="active" Type="bit" Nullable="false" />
+          <Property Name="sold" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuotationsDocuments">
+          <Key>
+            <PropertyRef Name="idQuotation" />
+            <PropertyRef Name="idDocument" />
+          </Key>
+          <Property Name="idQuotation" Type="int" Nullable="false" />
+          <Property Name="idDocument" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuotationsProducts">
+          <Key>
+            <PropertyRef Name="idQuotation" />
+            <PropertyRef Name="idProduct" />
+          </Key>
+          <Property Name="idQuotation" Type="int" Nullable="false" />
+          <Property Name="idProduct" Type="int" Nullable="false" />
+          <Property Name="price" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -64,6 +102,78 @@
           <Property Name="idUser" Type="int" Nullable="false" />
           <Property Name="idRole" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Documents_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="idClient" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quotations_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Quotations" Type="Self.Quotations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="idClient" />
+            </Principal>
+            <Dependent Role="Quotations">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuotationsDocuments_Documents">
+          <End Role="Documents" Type="Self.Documents" Multiplicity="1" />
+          <End Role="QuotationsDocuments" Type="Self.QuotationsDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="QuotationsDocuments">
+              <PropertyRef Name="idDocument" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuotationsDocuments_Quotations">
+          <End Role="Quotations" Type="Self.Quotations" Multiplicity="1" />
+          <End Role="QuotationsDocuments" Type="Self.QuotationsDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quotations">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="QuotationsDocuments">
+              <PropertyRef Name="idQuotation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuotationsProducts_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="QuotationsProducts" Type="Self.QuotationsProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="QuotationsProducts">
+              <PropertyRef Name="idProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuotationsProducts_Quotations">
+          <End Role="Quotations" Type="Self.Quotations" Multiplicity="1" />
+          <End Role="QuotationsProducts" Type="Self.QuotationsProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quotations">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="QuotationsProducts">
+              <PropertyRef Name="idQuotation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_RolesPermissions_Permissions">
           <End Role="Permissions" Type="Self.Permissions" Multiplicity="1" />
           <End Role="RolesPermissions" Type="Self.RolesPermissions" Multiplicity="*" />
@@ -114,12 +224,40 @@
         </Association>
         <EntityContainer Name="SistemaAirCenterModelStoreContainer">
           <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Permissions" EntityType="Self.Permissions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quotations" EntityType="Self.Quotations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuotationsDocuments" EntityType="Self.QuotationsDocuments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuotationsProducts" EntityType="Self.QuotationsProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RolesPermissions" EntityType="Self.RolesPermissions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UsersRoles" EntityType="Self.UsersRoles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Documents_Clients" Association="Self.FK_Documents_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quotations_Clients" Association="Self.FK_Quotations_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Quotations" EntitySet="Quotations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuotationsDocuments_Documents" Association="Self.FK_QuotationsDocuments_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="QuotationsDocuments" EntitySet="QuotationsDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuotationsDocuments_Quotations" Association="Self.FK_QuotationsDocuments_Quotations">
+            <End Role="Quotations" EntitySet="Quotations" />
+            <End Role="QuotationsDocuments" EntitySet="QuotationsDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuotationsProducts_Products" Association="Self.FK_QuotationsProducts_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="QuotationsProducts" EntitySet="QuotationsProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuotationsProducts_Quotations" Association="Self.FK_QuotationsProducts_Quotations">
+            <End Role="Quotations" EntitySet="Quotations" />
+            <End Role="QuotationsProducts" EntitySet="QuotationsProducts" />
+          </AssociationSet>
           <AssociationSet Name="FK_RolesPermissions_Permissions" Association="Self.FK_RolesPermissions_Permissions">
             <End Role="Permissions" EntitySet="Permissions" />
             <End Role="RolesPermissions" EntitySet="RolesPermissions" />
@@ -148,6 +286,8 @@
           <Property Name="idClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Documents" Relationship="SistemaAirCenterModel.FK_Documents_Clients" FromRole="Client" ToRole="Document" />
+          <NavigationProperty Name="Quotations" Relationship="SistemaAirCenterModel.FK_Quotations_Clients" FromRole="Client" ToRole="Quotation" />
         </EntityType>
         <EntityType Name="Permission">
           <Key>
@@ -201,6 +341,29 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <EntitySet Name="Products" EntityType="SistemaAirCenterModel.Product" />
+          <EntitySet Name="Documents" EntityType="SistemaAirCenterModel.Document" />
+          <EntitySet Name="Quotations" EntityType="SistemaAirCenterModel.Quotation" />
+          <EntitySet Name="QuotationProducts" EntityType="SistemaAirCenterModel.QuotationProduct" />
+          <AssociationSet Name="FK_Documents_Clients" Association="SistemaAirCenterModel.FK_Documents_Clients">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quotations_Clients" Association="SistemaAirCenterModel.FK_Quotations_Clients">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Quotation" EntitySet="Quotations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuotationsProducts_Products" Association="SistemaAirCenterModel.FK_QuotationsProducts_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="QuotationsProduct" EntitySet="QuotationProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuotationsProducts_Quotations" Association="SistemaAirCenterModel.FK_QuotationsProducts_Quotations">
+            <End Role="Quotation" EntitySet="Quotations" />
+            <End Role="QuotationsProduct" EntitySet="QuotationProducts" />
+          </AssociationSet>
+          <AssociationSet Name="QuotationsDocuments" Association="SistemaAirCenterModel.QuotationsDocuments">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="Quotation" EntitySet="Quotations" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Product">
           <Key>
@@ -210,7 +373,97 @@
           <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="QuotationsProducts" Relationship="SistemaAirCenterModel.FK_QuotationsProducts_Products" FromRole="Product" ToRole="QuotationsProduct" />
         </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idClient" Type="Int32" Nullable="false" />
+          <Property Name="dataFile" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="SistemaAirCenterModel.FK_Documents_Clients" FromRole="Document" ToRole="Client" />
+          <NavigationProperty Name="Quotations" Relationship="SistemaAirCenterModel.QuotationsDocuments" FromRole="Document" ToRole="Quotation" />
+        </EntityType>
+        <EntityType Name="Quotation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idClient" Type="Int32" Nullable="false" />
+          <Property Name="total" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <Property Name="sold" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="SistemaAirCenterModel.FK_Quotations_Clients" FromRole="Quotation" ToRole="Client" />
+          <NavigationProperty Name="QuotationsProducts" Relationship="SistemaAirCenterModel.FK_QuotationsProducts_Quotations" FromRole="Quotation" ToRole="QuotationsProduct" />
+          <NavigationProperty Name="Documents" Relationship="SistemaAirCenterModel.QuotationsDocuments" FromRole="Quotation" ToRole="Document" />
+        </EntityType>
+        <EntityType Name="QuotationProduct">
+          <Key>
+            <PropertyRef Name="idQuotation" />
+            <PropertyRef Name="idProduct" />
+          </Key>
+          <Property Name="idQuotation" Type="Int32" Nullable="false" />
+          <Property Name="idProduct" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Product" Relationship="SistemaAirCenterModel.FK_QuotationsProducts_Products" FromRole="QuotationsProduct" ToRole="Product" />
+          <NavigationProperty Name="Quotation" Relationship="SistemaAirCenterModel.FK_QuotationsProducts_Quotations" FromRole="QuotationsProduct" ToRole="Quotation" />
+        </EntityType>
+        <Association Name="FK_Documents_Clients">
+          <End Type="SistemaAirCenterModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="SistemaAirCenterModel.Document" Role="Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="idClient" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quotations_Clients">
+          <End Type="SistemaAirCenterModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="SistemaAirCenterModel.Quotation" Role="Quotation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="idClient" />
+            </Principal>
+            <Dependent Role="Quotation">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuotationsProducts_Products">
+          <End Type="SistemaAirCenterModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="SistemaAirCenterModel.QuotationProduct" Role="QuotationsProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="QuotationsProduct">
+              <PropertyRef Name="idProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuotationsProducts_Quotations">
+          <End Type="SistemaAirCenterModel.Quotation" Role="Quotation" Multiplicity="1" />
+          <End Type="SistemaAirCenterModel.QuotationProduct" Role="QuotationsProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quotation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="QuotationsProduct">
+              <PropertyRef Name="idQuotation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="QuotationsDocuments">
+          <End Type="SistemaAirCenterModel.Document" Role="Document" Multiplicity="*" />
+          <End Type="SistemaAirCenterModel.Quotation" Role="Quotation" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -281,6 +534,46 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="SistemaAirCenterModel.Document">
+              <MappingFragment StoreEntitySet="Documents">
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="dataFile" ColumnName="dataFile" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quotations">
+            <EntityTypeMapping TypeName="SistemaAirCenterModel.Quotation">
+              <MappingFragment StoreEntitySet="Quotations">
+                <ScalarProperty Name="sold" ColumnName="sold" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuotationProducts">
+            <EntityTypeMapping TypeName="SistemaAirCenterModel.QuotationProduct">
+              <MappingFragment StoreEntitySet="QuotationsProducts">
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="idProduct" ColumnName="idProduct" />
+                <ScalarProperty Name="idQuotation" ColumnName="idQuotation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="QuotationsDocuments" TypeName="SistemaAirCenterModel.QuotationsDocuments" StoreEntitySet="QuotationsDocuments">
+            <EndProperty Name="Quotation">
+              <ScalarProperty Name="id" ColumnName="idQuotation" />
+            </EndProperty>
+            <EndProperty Name="Document">
+              <ScalarProperty Name="id" ColumnName="idDocument" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
