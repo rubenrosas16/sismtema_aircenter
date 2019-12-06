@@ -27,6 +27,7 @@ namespace Controlador
         public decimal total { get; set; }
         public bool active { get; set; }
         public bool sold { get; set; }
+        public System.DateTime date { get; set; }
     
         public virtual Client Client { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

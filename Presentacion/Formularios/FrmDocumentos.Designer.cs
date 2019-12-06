@@ -29,20 +29,26 @@
         private void InitializeComponent()
         {
             this.chkActivo = new System.Windows.Forms.CheckBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblEstadoDocumento = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIDCliente = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnImprimir = new Presentacion.Controles.BotonImagen();
             this.btnCargaDocumento = new Presentacion.Controles.BotonImagen();
             this.btnBuscar = new Presentacion.Controles.BotonImagen();
             this.btnNuevo = new Presentacion.Controles.BotonImagen();
             this.btnGuardar = new Presentacion.Controles.BotonImagen();
+            this.txtFecha = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rbdPDF = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbdPlantilla = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chkActivo
@@ -56,14 +62,15 @@
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseVisualStyleBackColor = true;
             // 
-            // txtNombre
+            // txtDescripcion
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(48, 100);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(378, 24);
-            this.txtNombre.TabIndex = 14;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(48, 100);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(476, 24);
+            this.txtDescripcion.TabIndex = 14;
+            this.txtDescripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescripcion_KeyDown);
             // 
             // label1
             // 
@@ -84,6 +91,9 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(90, 24);
             this.txtID.TabIndex = 12;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
+            this.txtID.Validated += new System.EventHandler(this.txtID_Validated);
             // 
             // lblEstadoDocumento
             // 
@@ -107,14 +117,14 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Descripcion Documento";
             // 
-            // textBox1
+            // txtNombreCliente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(146, 160);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(378, 24);
-            this.textBox1.TabIndex = 24;
+            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.Location = new System.Drawing.Point(146, 160);
+            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(378, 24);
+            this.txtNombreCliente.TabIndex = 24;
             // 
             // label4
             // 
@@ -127,14 +137,21 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "ID Cliente";
             // 
-            // textBox2
+            // txtIDCliente
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(48, 160);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 24);
-            this.textBox2.TabIndex = 22;
+            this.txtIDCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDCliente.Location = new System.Drawing.Point(48, 160);
+            this.txtIDCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIDCliente.Name = "txtIDCliente";
+            this.txtIDCliente.Size = new System.Drawing.Size(90, 24);
+            this.txtIDCliente.TabIndex = 22;
+            this.txtIDCliente.TextChanged += new System.EventHandler(this.txtIDCliente_TextChanged);
+            this.txtIDCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDCliente_KeyDown);
+            this.txtIDCliente.Validated += new System.EventHandler(this.txtIDCliente_Validated);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "Pdf |*.pdf";
             // 
             // btnImprimir
             // 
@@ -147,6 +164,7 @@
             this.btnImprimir.Size = new System.Drawing.Size(56, 47);
             this.btnImprimir.TabIndex = 25;
             this.btnImprimir.ToolTip = "Imprimir";
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnCargaDocumento
             // 
@@ -171,6 +189,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(50, 50);
             this.btnBuscar.TabIndex = 18;
             this.btnBuscar.ToolTip = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNuevo
             // 
@@ -183,6 +202,7 @@
             this.btnNuevo.Size = new System.Drawing.Size(56, 47);
             this.btnNuevo.TabIndex = 17;
             this.btnNuevo.ToolTip = "Nuevo Documento";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -195,16 +215,77 @@
             this.btnGuardar.Size = new System.Drawing.Size(56, 47);
             this.btnGuardar.TabIndex = 16;
             this.btnGuardar.ToolTip = "Guardar Documento";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Enabled = false;
+            this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFecha.Location = new System.Drawing.Point(336, 43);
+            this.txtFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(188, 24);
+            this.txtFecha.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(333, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 16);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Fecha";
+            // 
+            // rbdPDF
+            // 
+            this.rbdPDF.AutoSize = true;
+            this.rbdPDF.Checked = true;
+            this.rbdPDF.Location = new System.Drawing.Point(15, 29);
+            this.rbdPDF.Name = "rbdPDF";
+            this.rbdPDF.Size = new System.Drawing.Size(56, 20);
+            this.rbdPDF.TabIndex = 28;
+            this.rbdPDF.TabStop = true;
+            this.rbdPDF.Text = "PDF";
+            this.rbdPDF.UseVisualStyleBackColor = true;
+            this.rbdPDF.CheckedChanged += new System.EventHandler(this.rbdPDF_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbdPlantilla);
+            this.groupBox1.Controls.Add(this.rbdPDF);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(336, 233);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(154, 96);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo";
+            // 
+            // rbdPlantilla
+            // 
+            this.rbdPlantilla.AutoSize = true;
+            this.rbdPlantilla.Location = new System.Drawing.Point(15, 60);
+            this.rbdPlantilla.Name = "rbdPlantilla";
+            this.rbdPlantilla.Size = new System.Drawing.Size(82, 20);
+            this.rbdPlantilla.TabIndex = 29;
+            this.rbdPlantilla.Text = "Plantilla";
+            this.rbdPlantilla.UseVisualStyleBackColor = true;
+            this.rbdPlantilla.CheckedChanged += new System.EventHandler(this.rbdPlantilla_CheckedChanged);
             // 
             // FrmDocumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombreCliente);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtIDCliente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblEstadoDocumento);
             this.Controls.Add(this.btnCargaDocumento);
@@ -212,11 +293,14 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.chkActivo);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtID);
             this.Name = "FrmDocumentos";
             this.Text = "FrmDocumentos";
+            this.Load += new System.EventHandler(this.FrmDocumentos_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,7 +309,7 @@
         #endregion
 
         private System.Windows.Forms.CheckBox chkActivo;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
         private Controles.BotonImagen btnBuscar;
@@ -234,10 +318,15 @@
         private Controles.BotonImagen btnCargaDocumento;
         private System.Windows.Forms.Label lblEstadoDocumento;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIDCliente;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private Controles.BotonImagen btnImprimir;
+        private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton rbdPDF;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbdPlantilla;
     }
 }

@@ -33,5 +33,6 @@ namespace Controlador
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<Quotation> Quotations { get; set; }
         public virtual DbSet<QuotationProduct> QuotationProducts { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

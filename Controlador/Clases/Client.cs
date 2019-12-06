@@ -9,10 +9,6 @@ namespace Controlador
     public partial class Client : Entidad
     {
 
-        public Client()
-        {
-
-        }
         public Client(Contexto contexto) : base(contexto)
         {
 
@@ -43,6 +39,7 @@ namespace Controlador
 
         public Client GetClient(int id)
         {
+            ReiniciarConexto();
             Client client = Contexto.Clients.Where(x => x.idClient == id).Select(x => x).FirstOrDefault();
             if (client != null)
                 client.Contexto = this.Contexto;

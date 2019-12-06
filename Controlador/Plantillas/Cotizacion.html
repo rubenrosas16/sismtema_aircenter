@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }   
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }   
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }   
+        </style>
+    </head>
+    <body>  
+        <h1 style="text-align: center;">Cotizaci&oacute;n</h1>
+        <p>&nbsp;</p>
+        <p><strong>Empresa:</strong> {{Sucursal}}</p>
+        <p><strong>Cliente:</strong> {{Client}}</p>
+        <p><strong>Total:</strong> {{Total}}</p>
+        <h3 style="text-align: center;"><strong>Productos</strong></h3>       
+        <table>
+            <tbody>
+            <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Monto</th>
+            </tr>
+            <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>2</td>
+            <td>100</td>
+            <td>&nbsp;200</td>
+            </tr>
+            </tbody>
+        </table> 
+    </body>
+</html>

@@ -9,9 +9,6 @@ namespace Controlador
     public partial class Product : Entidad
     {
 
-        public Product() { 
-        
-        }
         public Product(Contexto contexto) : base(contexto)
         {
 
@@ -19,6 +16,7 @@ namespace Controlador
 
         public Product GetProducto(int id)
         {
+            ReiniciarConexto();
             Product product = Contexto.Products.Where(x => x.id == id).Select(x => x).FirstOrDefault();
             if (product != null)
                 product.Contexto = this.Contexto;

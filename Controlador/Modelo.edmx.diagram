@@ -20,6 +20,7 @@
         <AssociationConnector Association="SistemaAirCenterModel.FK_QuotationsProducts_Products" />
         <AssociationConnector Association="SistemaAirCenterModel.FK_QuotationsProducts_Quotations" />
         <AssociationConnector Association="SistemaAirCenterModel.QuotationsDocuments" />
+        <EntityTypeShape EntityType="SistemaAirCenterModel.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
