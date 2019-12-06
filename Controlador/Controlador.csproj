@@ -58,6 +58,7 @@
     <Compile Include="Clases\Document.cs" />
     <Compile Include="Clases\Entidad.cs" />
     <Compile Include="Clases\Product.cs" />
+    <Compile Include="Clases\Quotation.cs" />
     <Compile Include="Clases\User.cs" />
     <Compile Include="Client.cs">
       <DependentUpon>Modelo.tt</DependentUpon>

@@ -65,11 +65,13 @@
           <Key>
             <PropertyRef Name="idQuotation" />
             <PropertyRef Name="idProduct" />
+            <PropertyRef Name="row" />
           </Key>
           <Property Name="idQuotation" Type="int" Nullable="false" />
           <Property Name="idProduct" Type="int" Nullable="false" />
           <Property Name="price" Type="money" Nullable="false" />
           <Property Name="quantity" Type="money" Nullable="false" />
+          <Property Name="row" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -422,6 +424,7 @@
           <Key>
             <PropertyRef Name="idQuotation" />
             <PropertyRef Name="idProduct" />
+            <PropertyRef Name="row" />
           </Key>
           <Property Name="idQuotation" Type="Int32" Nullable="false" />
           <Property Name="idProduct" Type="Int32" Nullable="false" />
@@ -429,6 +432,7 @@
           <NavigationProperty Name="Product" Relationship="SistemaAirCenterModel.FK_QuotationsProducts_Products" FromRole="QuotationsProduct" ToRole="Product" />
           <NavigationProperty Name="Quotation" Relationship="SistemaAirCenterModel.FK_QuotationsProducts_Quotations" FromRole="QuotationsProduct" ToRole="Quotation" />
           <Property Name="quantity" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="row" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_Documents_Clients">
           <End Type="SistemaAirCenterModel.Client" Role="Client" Multiplicity="1" />
@@ -590,6 +594,7 @@
           <EntitySetMapping Name="QuotationProducts">
             <EntityTypeMapping TypeName="SistemaAirCenterModel.QuotationProduct">
               <MappingFragment StoreEntitySet="QuotationsProducts">
+                <ScalarProperty Name="row" ColumnName="row" />
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="idProduct" ColumnName="idProduct" />

@@ -18,6 +18,7 @@ namespace Controlador
         public int idProduct { get; set; }
         public decimal price { get; set; }
         public decimal quantity { get; set; }
+        public int row { get; set; }
     
         public virtual Product Product { get; set; }
         public virtual Quotation Quotation { get; set; }

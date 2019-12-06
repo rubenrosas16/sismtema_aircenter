@@ -12,7 +12,7 @@
   <xs:element name="CotizacionesDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CotizacionesDS" msprop:Generator_UserDSName="CotizacionesDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ProductosDT" msprop:Generator_TableClassName="ProductosDTDataTable" msprop:Generator_TableVarName="tableProductosDT" msprop:Generator_TablePropName="ProductosDT" msprop:Generator_RowDeletingName="ProductosDTRowDeleting" msprop:Generator_RowChangingName="ProductosDTRowChanging" msprop:Generator_RowEvHandlerName="ProductosDTRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductosDTRowDeleted" msprop:Generator_UserTableName="ProductosDT" msprop:Generator_RowChangedName="ProductosDTRowChanged" msprop:Generator_RowEvArgName="ProductosDTRowChangeEvent" msprop:Generator_RowClassName="ProductosDTRow">
+        <xs:element name="ProductosDT" msprop:Generator_TableClassName="ProductosDTDataTable" msprop:Generator_TableVarName="tableProductosDT" msprop:Generator_RowChangedName="ProductosDTRowChanged" msprop:Generator_TablePropName="ProductosDT" msprop:Generator_RowDeletingName="ProductosDTRowDeleting" msprop:Generator_RowChangingName="ProductosDTRowChanging" msprop:Generator_RowEvHandlerName="ProductosDTRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductosDTRowDeleted" msprop:Generator_RowClassName="ProductosDTRow" msprop:Generator_UserTableName="ProductosDT" msprop:Generator_RowEvArgName="ProductosDTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idProducto" msprop:Generator_ColumnVarNameInTable="columnidProducto" msprop:Generator_ColumnPropNameInRow="idProducto" msprop:Generator_ColumnPropNameInTable="idProductoColumn" msprop:Generator_UserColumnName="idProducto" type="xs:int" />
@@ -23,11 +23,12 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DocumentosDT" msprop:Generator_TableClassName="DocumentosDTDataTable" msprop:Generator_TableVarName="tableDocumentosDT" msprop:Generator_TablePropName="DocumentosDT" msprop:Generator_RowDeletingName="DocumentosDTRowDeleting" msprop:Generator_RowChangingName="DocumentosDTRowChanging" msprop:Generator_RowEvHandlerName="DocumentosDTRowChangeEventHandler" msprop:Generator_RowDeletedName="DocumentosDTRowDeleted" msprop:Generator_UserTableName="DocumentosDT" msprop:Generator_RowChangedName="DocumentosDTRowChanged" msprop:Generator_RowEvArgName="DocumentosDTRowChangeEvent" msprop:Generator_RowClassName="DocumentosDTRow">
+        <xs:element name="DocumentosDT" msprop:Generator_TableClassName="DocumentosDTDataTable" msprop:Generator_TableVarName="tableDocumentosDT" msprop:Generator_RowChangedName="DocumentosDTRowChanged" msprop:Generator_TablePropName="DocumentosDT" msprop:Generator_RowDeletingName="DocumentosDTRowDeleting" msprop:Generator_RowChangingName="DocumentosDTRowChanging" msprop:Generator_RowEvHandlerName="DocumentosDTRowChangeEventHandler" msprop:Generator_RowDeletedName="DocumentosDTRowDeleted" msprop:Generator_RowClassName="DocumentosDTRow" msprop:Generator_UserTableName="DocumentosDT" msprop:Generator_RowEvArgName="DocumentosDTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="Document" msprop:Generator_ColumnVarNameInTable="columnDocument" msprop:Generator_ColumnPropNameInRow="Document" msprop:Generator_ColumnPropNameInTable="DocumentColumn" msprop:Generator_UserColumnName="Document" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -19,7 +19,8 @@ namespace Presentacion
             Roles,
             Clients,
             Products,
-            Documents
+            Documents,
+            Quotations
         }
 
         public ConsultaRapida(Contexto contexto)
@@ -60,6 +61,11 @@ namespace Presentacion
                     titulo = "Consulta de Documentos";
                     columnas = 4;
                     break;
+                case TipoConsulta.Quotations:
+                    dataTableFechas = ConsultarCotizaciones();
+                    titulo = "Consulta de Cotizaciones";
+                    columnas = 4;
+                    break;
                 default:
                     throw new Exception("El tipo de consulta rapida no está definido.");
             }
@@ -79,6 +85,12 @@ namespace Presentacion
             {
                 throw new Exception("El tipo de consulta rapida no está definido.");
             }
+        }
+
+        private Controlador.DataSets.ConsultaRapida.CuatroCamposDTDataTable ConsultarCotizaciones()
+        {
+            Quotation quotation = new Quotation(this.Contexto);
+            return quotation.ConsultaRapida();
         }
 
         private Controlador.DataSets.ConsultaRapida.CuatroCamposDTDataTable ConsultarDocumentos()

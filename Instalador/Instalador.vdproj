@@ -15,7 +15,25 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1598F95BBEC94F1F9321F2335BBA4218"
+        "MsmKey" = "8:_0FBFDE0DD4874AE0808031E842C75585"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_102F9A61EC6911CF7548B32A2CD6760F"
+        "OwnerKey" = "8:_F1C82ECF96364B519209057352FC38CC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_11C13A8A60D04F0AAA102AC2A13C3163"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1708AC3EF109451C961905739D47B4A0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,14 +45,32 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2CBF8184D949D80B3B5891E2114A02DC"
-        "OwnerKey" = "8:_EB75D3C8893248F39620F7CA3CA5D59C"
+        "MsmKey" = "8:_2FFCFA4A31514137B89FC36B44EB3631"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_358BD7DFDB064401A7459CD152A8E49F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_995FF8E80A8F401FBC8BA20C1A537AB1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BB4E004E6C2F4444BEC80172A00B0488"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_BC3001A87122267BA947B4087747D03F"
-        "OwnerKey" = "8:_2CBF8184D949D80B3B5891E2114A02DC"
+        "OwnerKey" = "8:_102F9A61EC6911CF7548B32A2CD6760F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,25 +82,37 @@
         "Entry"
         {
         "MsmKey" = "8:_BC3001A87122267BA947B4087747D03F"
-        "OwnerKey" = "8:_EB75D3C8893248F39620F7CA3CA5D59C"
+        "OwnerKey" = "8:_F1C82ECF96364B519209057352FC38CC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_CEAA9EBEE02AAB2426F5CF23370D798A"
-        "OwnerKey" = "8:_EB75D3C8893248F39620F7CA3CA5D59C"
+        "OwnerKey" = "8:_F1C82ECF96364B519209057352FC38CC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_EB75D3C8893248F39620F7CA3CA5D59C"
+        "MsmKey" = "8:_D90B7E86021C48CC8659C4F49EC1FC56"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F1C82ECF96364B519209057352FC38CC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EB75D3C8893248F39620F7CA3CA5D59C"
+        "OwnerKey" = "8:_BC3001A87122267BA947B4087747D03F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_F1C82ECF96364B519209057352FC38CC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -76,13 +124,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2CBF8184D949D80B3B5891E2114A02DC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BC3001A87122267BA947B4087747D03F"
+        "OwnerKey" = "8:_102F9A61EC6911CF7548B32A2CD6760F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -110,6 +152,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -134,6 +184,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -164,12 +222,83 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1598F95BBEC94F1F9321F2335BBA4218"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0FBFDE0DD4874AE0808031E842C75585"
             {
-            "SourcePath" = "8:..\\Negocio\\Configuracion.xml"
-            "TargetName" = "8:Configuracion.xml"
+            "SourcePath" = "8:..\\Controlador\\Formatos\\Solicitud de Interconexion.pdf"
+            "TargetName" = "8:Solicitud de Interconexion.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_D6DFF66147394B95BD18512FC1C1E5D0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_102F9A61EC6911CF7548B32A2CD6760F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Controlador, Version=0.7.2.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_102F9A61EC6911CF7548B32A2CD6760F"
+                    {
+                    "Name" = "8:Controlador.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Controlador.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_83DCF5D7B2284DB4A1904F8F72F5FBFD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_11C13A8A60D04F0AAA102AC2A13C3163"
+            {
+            "SourcePath" = "8:..\\Controlador\\Plantillas\\Cotizacion.html"
+            "TargetName" = "8:Cotizacion.html"
+            "Tag" = "8:"
+            "Folder" = "8:_647EC657E83C497E8807922733479B02"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1708AC3EF109451C961905739D47B4A0"
+            {
+            "SourcePath" = "8:..\\Controlador\\wkhtmltox\\wkhtmltoimage.exe"
+            "TargetName" = "8:wkhtmltoimage.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_D77E6C401298435E9CC6251E89BA768F"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -204,21 +333,50 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2CBF8184D949D80B3B5891E2114A02DC"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2FFCFA4A31514137B89FC36B44EB3631"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Controlador, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2CBF8184D949D80B3B5891E2114A02DC"
-                    {
-                    "Name" = "8:Controlador.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Controlador.dll"
-            "TargetName" = "8:"
+            "SourcePath" = "8:..\\Controlador\\wkhtmltox\\wkhtmltox.dll"
+            "TargetName" = "8:wkhtmltox.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_D77E6C401298435E9CC6251E89BA768F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_358BD7DFDB064401A7459CD152A8E49F"
+            {
+            "SourcePath" = "8:..\\Controlador\\wkhtmltox\\libwkhtmltox.a"
+            "TargetName" = "8:libwkhtmltox.a"
+            "Tag" = "8:"
+            "Folder" = "8:_D77E6C401298435E9CC6251E89BA768F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_995FF8E80A8F401FBC8BA20C1A537AB1"
+            {
+            "SourcePath" = "8:..\\Controlador\\Configuracion.xml"
+            "TargetName" = "8:Configuracion.xml"
             "Tag" = "8:"
             "Folder" = "8:_83DCF5D7B2284DB4A1904F8F72F5FBFD"
             "Condition" = "8:"
@@ -232,7 +390,27 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BB4E004E6C2F4444BEC80172A00B0488"
+            {
+            "SourcePath" = "8:..\\Controlador\\wkhtmltox\\wkhtmltopdf.exe"
+            "TargetName" = "8:wkhtmltopdf.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_D77E6C401298435E9CC6251E89BA768F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BC3001A87122267BA947B4087747D03F"
@@ -297,6 +475,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D90B7E86021C48CC8659C4F49EC1FC56"
+            {
+            "SourcePath" = "8:..\\Controlador\\Plantillas\\Ejemplo.html"
+            "TargetName" = "8:Ejemplo.html"
+            "Tag" = "8:"
+            "Folder" = "8:_647EC657E83C497E8807922733479B02"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -313,6 +511,50 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_2BCC2DCB8FCE48D9B576CA3A5DE06CCA"
+                    {
+                    "Name" = "8:Documentos"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_FF1847ED45A74DCB97D3C33A088DBBAF"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_647EC657E83C497E8807922733479B02"
+                    {
+                    "Name" = "8:Plantillas"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_A88E517C0B3B4DDB881C34655D315A69"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_D6DFF66147394B95BD18512FC1C1E5D0"
+                    {
+                    "Name" = "8:Formatos"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_44B738ACC99D483E8EC5119C9CEC3DBB"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_D77E6C401298435E9CC6251E89BA768F"
+                    {
+                    "Name" = "8:wkhtmltox"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_B609015789F74F91968AC1ED5277BCFE"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_8F9E6D47418940DCACB491591B71B17A"
@@ -354,7 +596,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Sistema AirCenter"
         "ProductCode" = "8:{92926C30-A7FF-4C75-B929-34283D74D5ED}"
-        "PackageCode" = "8:{B1D70232-87F4-4313-BD0E-063B793F66E7}"
+        "PackageCode" = "8:{C29F8481-C858-455D-993B-A9A8E16EB4FE}"
         "UpgradeCode" = "8:{CB53F37D-6A9D-465D-81D5-0CD730EF533A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -482,7 +724,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_EB75D3C8893248F39620F7CA3CA5D59C"
+            "Target" = "8:_F1C82ECF96364B519209057352FC38CC"
             "Folder" = "8:_8F9E6D47418940DCACB491591B71B17A"
             "WorkingFolder" = "8:_83DCF5D7B2284DB4A1904F8F72F5FBFD"
             "Icon" = "8:_20A83274DC0840C9BF0D311C5F019337"
@@ -887,9 +1129,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EB75D3C8893248F39620F7CA3CA5D59C"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F1C82ECF96364B519209057352FC38CC"
             {
-            "SourcePath" = "8:..\\Presentacion\\obj\\Debug\\Presentacion.exe"
+            "SourcePath" = "8:..\\Presentacion\\obj\\Debug\\AirCenter.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_83DCF5D7B2284DB4A1904F8F72F5FBFD"

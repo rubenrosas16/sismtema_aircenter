@@ -634,6 +634,8 @@ namespace Controlador.DataSets {
             
             private global::System.Data.DataColumn columndescripcion;
             
+            private global::System.Data.DataColumn columnDocument;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DocumentosDTDataTable() {
@@ -685,6 +687,14 @@ namespace Controlador.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DocumentColumn {
+                get {
+                    return this.columnDocument;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -720,11 +730,12 @@ namespace Controlador.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DocumentosDTRow AddDocumentosDTRow(int id, string descripcion) {
+            public DocumentosDTRow AddDocumentosDTRow(int id, string descripcion, byte[] Document) {
                 DocumentosDTRow rowDocumentosDTRow = ((DocumentosDTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
-                        descripcion};
+                        descripcion,
+                        Document};
                 rowDocumentosDTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDocumentosDTRow);
                 return rowDocumentosDTRow;
@@ -756,6 +767,7 @@ namespace Controlador.DataSets {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columndescripcion = base.Columns["descripcion"];
+                this.columnDocument = base.Columns["Document"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -765,6 +777,8 @@ namespace Controlador.DataSets {
                 base.Columns.Add(this.columnid);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
+                this.columnDocument = new global::System.Data.DataColumn("Document", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocument);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -1059,6 +1073,22 @@ namespace Controlador.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public byte[] Document {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableDocumentosDT.DocumentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Document\' de la tabla \'DocumentosDT\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocumentosDT.DocumentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsdescripcionNull() {
                 return this.IsNull(this.tableDocumentosDT.descripcionColumn);
             }
@@ -1067,6 +1097,18 @@ namespace Controlador.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdescripcionNull() {
                 this[this.tableDocumentosDT.descripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocumentNull() {
+                return this.IsNull(this.tableDocumentosDT.DocumentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocumentNull() {
+                this[this.tableDocumentosDT.DocumentColumn] = global::System.Convert.DBNull;
             }
         }
         
