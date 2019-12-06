@@ -21,8 +21,8 @@
     <body>  
         <h1 style="text-align: center;">Cotizaci&oacute;n</h1>
         <p>&nbsp;</p>
-        <p><strong>Empresa:</strong> {{Sucursal}}</p>
-        <p><strong>Cliente:</strong> {{Client}}</p>
+        <p><strong>Empresa:</strong> {{Empresa}}</p>
+        <p><strong>Cliente:</strong> {{Cliente}}</p>
         <p><strong>Total:</strong> {{Total}}</p>
         <h3 style="text-align: center;"><strong>Productos</strong></h3>       
         <table>
@@ -33,12 +33,7 @@
             <th>Precio</th>
             <th>Monto</th>
             </tr>
-            <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>2</td>
-            <td>100</td>
-            <td>&nbsp;200</td>
-            </tr>
+            {{Repetir_Productos}}
             </tbody>
         </table> 
     </body>

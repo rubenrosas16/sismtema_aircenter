@@ -62,12 +62,13 @@ namespace Controlador
             if (this.dataFile.Length > 0)
             {
                 string ruta = AppDomain.CurrentDomain.BaseDirectory + @"Documentos\\Documento.pdf";
+                Directory.CreateDirectory(Path.GetDirectoryName(ruta));
                 File.WriteAllBytes(ruta, this.dataFile);
                 Process.Start(ruta);
             }
         }
 
-        public byte[] ObtenerDocumentoDesdePlantilla(string rutaPlantilla, int idCliente) 
+        public byte[] ObtenerDocumentoDesdePlantilla(string rutaPlantilla, int idCliente)
         {
             ReiniciarConexto();
 
@@ -87,15 +88,16 @@ namespace Controlador
         {
             string textoPlantilla = File.ReadAllText(rutaPlantilla, Encoding.UTF8);
 
-            if (textoPlantilla.Contains("{{Sucursal}}"))
+            if (textoPlantilla.Contains("{{Empresa}}"))
             {
-                textoPlantilla = textoPlantilla.Replace("{{Sucursal}}", "AirCenter SA de SV");
+                Configuracion config = Configuracion.GetConfiguracion();
+                textoPlantilla = textoPlantilla.Replace("{{Empresa}}", config.Local.NombreEmpresa);
             }
 
-            if (client != null && textoPlantilla.Contains("{{Client}}"))
+            if (client != null && textoPlantilla.Contains("{{Cliente}}"))
             {
                 //Client client = Contexto.Clients.Where(x => x.idClient == idClient).Select(x => x).FirstOrDefault();
-                textoPlantilla = textoPlantilla.Replace("{{Client}}", client.name);
+                textoPlantilla = textoPlantilla.Replace("{{Cliente}}", client.name);
             }
 
             if(products != null && textoPlantilla.Contains("{{Repetir_Productos}}"))
@@ -117,8 +119,8 @@ namespace Controlador
             if (textoPlantilla.Contains("{{Total}}"))
             {
                 textoPlantilla = textoPlantilla.Replace("{{Total}}", total.ToString("$ #######0.00"));
-            }
-
+            }        
+            Directory.CreateDirectory(Path.GetDirectoryName(rutaHTML));
             File.WriteAllText(rutaHTML, textoPlantilla, Encoding.UTF8);
         }
 

@@ -38,6 +38,7 @@ namespace Presentacion.Formularios
             Document.dataFile = null;
             Client = null;
             rbdPDF.Checked = true;
+            openFileDialog.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory + "Formatos";
             txtID.Focus();
         }
 
@@ -271,7 +272,7 @@ namespace Presentacion.Formularios
         private void rbdPDF_CheckedChanged(object sender, EventArgs e)
         {
             openFileDialog.Filter = "Pdf |*.pdf";
-            openFileDialog.InitialDirectory = "";
+            openFileDialog.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory + "Formatos";
         }
 
     }

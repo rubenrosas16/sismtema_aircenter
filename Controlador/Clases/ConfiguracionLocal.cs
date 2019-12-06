@@ -12,5 +12,7 @@ namespace Controlador
         public string Conexion { get; set; }
         public string UrlInicio { get; set; }
 
+        public string NombreEmpresa { get; set; }
+
     }
 }

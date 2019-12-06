@@ -2,4 +2,5 @@
 <ConfiguracionLocal >
   <Conexion>data source=DESKTOP-AHG20RD\SQLEXPRESS;initial catalog=SistemaAirCenter;persist security info=True;user id=sa;password=123;multipleactiveresultsets=True;application name=EntityFramework</Conexion>
   <UrlInicio>https://www.facebook.com/AirCenterCln/</UrlInicio>
+  <NombreEmpresa>AirCenter SA de SV</NombreEmpresa>
 </ConfiguracionLocal>

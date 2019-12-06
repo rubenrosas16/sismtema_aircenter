@@ -67,6 +67,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ConsultaRapidaDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\CotizacionesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CotizacionesDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\RolesDS.Designer.cs">
       <DependentUpon>RolesDS.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -128,6 +133,17 @@
     </None>
     <None Include="DataSets\ConsultaRapidaDS.xss">
       <DependentUpon>ConsultaRapidaDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CotizacionesDS.xsc">
+      <DependentUpon>CotizacionesDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CotizacionesDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CotizacionesDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\CotizacionesDS.xss">
+      <DependentUpon>CotizacionesDS.xsd</DependentUpon>
     </None>
     <None Include="DataSets\RolesDS.xsc">
       <DependentUpon>RolesDS.xsd</DependentUpon>

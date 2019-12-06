@@ -189,6 +189,9 @@
     <EmbeddedResource Include="Formularios\FrmConsultaRapida.resx">
       <DependentUpon>FrmConsultaRapida.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCotizacion.resx">
+      <DependentUpon>FrmCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCuenta.resx">
       <DependentUpon>FrmCuenta.cs</DependentUpon>
     </EmbeddedResource>
