@@ -41,6 +41,9 @@
   <PropertyGroup>
     <ApplicationIcon>copo-de-nieve.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
@@ -230,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="copo-de-nieve.ico" />
+    <None Include="app.manifest" />
     <None Include="Properties\DataSources\Controlador.DataSets.ConsultaRapidaDS+TresCamposDTDataTable.datasource" />
     <None Include="Recursos\ICONOS\005-login.png" />
     <None Include="Recursos\ICONOS\016-enter.png" />
